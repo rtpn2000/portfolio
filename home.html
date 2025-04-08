@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rtpn'$ Arcade</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background"></div>
+
+    <h1 id="title"></h1>
+        <p id="intro"></p>
+
+    <div class="index-container">
+
+        <h2 id="quest"></h2>
+        <div id = "cardcontainer"class="cards-container">
+            <div class="game-card" onclick="navigateTo('/about.html')">
+                <div class="icon">👨‍💻</div>
+                <div class="text">About Me</div>
+            </div>
+
+            <div class="game-card" onclick="navigateTo('/education.html')">
+                <div class="icon">🎓</div>
+                <div class="text">Education</div>
+            </div>
+
+            <div class="game-card" onclick="navigateTo('experience.html')">
+                <div class="icon">🛠️</div>
+                <div class="text">Experience</div>
+            </div>
+            <div class="game-card" onclick="navigateTo('projects.html')">
+                <div class="icon">💡</div>
+                <div class="text">Projects</div>
+            </div>
+            <div class="game-card" onclick="navigateTo('skills.html')">
+                <div class="icon">🎨</div>
+                <div class="text">Skills</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Copyright &copy; 2025 - Ravi Tarun N</p>
+      </footer>      
+
+    <script src="js/script.js"></script>
+</body>
+</html>
