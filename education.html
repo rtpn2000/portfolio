@@ -23,58 +23,155 @@
       </ul>
   </div>
 
-    <div class="timeline-container">
-        <div class="timeline-item left">
-          <div class="timeline-content">
-            <h3>Seattle University</h3>
-            <h4>2023 - 2025</h4>
-            <p>Master of Science in Computer Science with Data Science Specialization </p>
-            <ul>
-              <li>GPA: 3.6</li>
-              <li>Dean’s Honor Roll x 3</li>
-            </ul>
-          </div>
-        </div>
-      
-        <div class="timeline-item right">
-          <div class="timeline-content">
-            <h3>GITAM University</h3>
-            <h4>2017 - 2021</h4>
-            <p>Bachelor of Technology in Computer Science</p>
-            <ul>
-              <li>CGPA: 8.33</li>
-            </ul>
-          </div>
-        </div>
-      
-        <div class="timeline-item left">
-          <div class="timeline-content">
-            <h3>Sri Chaitanya Junior College</h3>
-            <h4>2015 - 2017</h4>
-            <p>Class XI - XII</p>
-            <ul>
-            <li>Percentage: 95.6%</li>
-            </ul>
-          </div>
-        </div>
-      
-        <div class="timeline-item right">
-            <div class="timeline-content">
-              <h3>Vikas -  The Concept School</h3>
-              <h4>2014 - 2015</h4>
-              <p>Class X</p>
-              <ul>
-                <li>CGPA: 9.6</li>
-              </ul>
-            </div>
-          </div>
-
-      </div>
+  <section class="education-table-section">
+    <table class="edu-table">
+      <colgroup>
+        <col style="width: 10%">
+        <col style="width: 45%">
+        <col style="width: 10%">
+        <col style="width: 35%">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>University Name</th>
+          <th>Degree</th>
+          <th>GPA</th>
+          <th>Timeline</th>
+          <th>Courses Taken</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Seattle University</td>
+          <td>Master of Science in Computer Science with Data Science Specialization</td>
+          <td>3.6</td>
+          <td>2023 - 2025</td>
+          <td><a href="#" class="course-link" onclick="openModal('seattleModal')">👁️</a></td>
+        </tr>
+        <tr>
+          <td>GITAM University</td>
+          <td>Bachelor of Technology in Computer Science</td>
+          <td>8.33</td>
+          <td>2017 - 2021</td>
+          <td><a href="#" class="course-link" onclick="openModal('gitamModal')">👁️</a></td>
+        </tr>
+        <tr>
+          <td>Sri Chaitanya Junior College</td>
+          <td>Intermediate (Class XI - XII)</td>
+          <td>95.6%</td>
+          <td>2015 - 2017</td>
+          <td><a href="#" class="course-link" onclick="openModal('chaitanyaModal')">👁️</a></td>
+        </tr>
+        <tr>
+          <td>Vikas - The Concept School</td>
+          <td>Class X</td>
+          <td>9.6</td>
+          <td>2013 - 2015</td>
+          <td><a href="#" class="course-link" onclick="openModal('vikasModal')">👁️</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
 
       <footer class="footer">
         <p>Copyright &copy; 2025 - Ravi Tarun N</p>
     </footer> 
     
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
+
+<!-- Modal for Seattle University -->
+<div id="seattleModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('seattleModal')">&times;</span>
+    <h2>Seattle University</h2>
+    <table class="modal-table">
+      <thead>
+        <tr>
+          <th>Course Code</th>
+          <th>Course Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>CPSC 5001</td><td>Intro to Software Development</td></tr>
+        <tr><td>CPSC 5002</td><td>Data Structures</td></tr>
+        <tr><td>CPSC 5101</td><td>Advanced Algorithms</td></tr>
+        <tr><td>CPSC 5111</td><td>Machine Learning</td></tr>
+        <tr><td>CPSC 5121</td><td>Data Mining</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for GITAM University -->
+<div id="gitamModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('gitamModal')">&times;</span>
+    <h2>GITAM University</h2>
+    <table class="modal-table">
+      <thead>
+        <tr>
+          <th>Course Code</th>
+          <th>Course Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>CSE 101</td><td>Data Structures</td></tr>
+        <tr><td>CSE 102</td><td>Operating Systems</td></tr>
+        <tr><td>CSE 103</td><td>Database Management</td></tr>
+        <tr><td>CSE 104</td><td>Computer Networks</td></tr>
+        <tr><td>CSE 105</td><td>Software Engineering</td></tr>
+        <!-- Add more as needed -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for Sri Chaitanya Junior College -->
+<div id="chaitanyaModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('chaitanyaModal')">&times;</span>
+    <h2>Sri Chaitanya Junior College</h2>
+    <table class="modal-table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Maths</td><td>Algebra, Calculus, Probability</td></tr>
+        <tr><td>Physics</td><td>Mechanics, Optics, Thermodynamics</td></tr>
+        <tr><td>Chemistry</td><td>Organic Chemistry, Inorganic Chemistry</td></tr>
+        <tr><td>English</td><td>Literature, Grammar, Composition</td></tr>
+        <!-- Add more as needed -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for Vikas - The Concept School -->
+<div id="vikasModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('vikasModal')">&times;</span>
+    <h2>Vikas - The Concept School</h2>
+    <table class="modal-table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Science</td><td>Basic Science Concepts</td></tr>
+        <tr><td>Social Studies</td><td>History, Geography</td></tr>
+        <tr><td>English</td><td>Literature, Grammar</td></tr>
+        <tr><td>Mathematics</td><td>Arithmetic, Algebra</td></tr>
+        <!-- Add more as needed -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
 </body>
 </html>
