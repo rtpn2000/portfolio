@@ -149,7 +149,7 @@ html, body {
 
 /* Game Card Style */
 .game-card {
-  background: #1a1a1a;
+  background: #000000;
   border: 4px solid #00ff00;
   border-radius: 10px;
   box-shadow: 0 0 15px #00ff00;
@@ -249,76 +249,132 @@ html, body {
 }
 
 /* Education Section */
-.timeline-container {
-  position: fixed;
-  width: 85%;
-  margin: auto;
-  padding: 20px;
-  overflow-y: auto;
-  margin-top: 750px;
-  margin-bottom: calc(140px + 20px);
-  margin-left: 100px;
-  margin-right: 100px;
-  scrollbar-width: none;
+
+.education-table-section {
+  padding: 100px 40px;
+  margin: 0 auto;
+  width: 95vw;
+  min-height: 95vh; /* Fill most of the viewport */
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
 }
 
-/* Hide scrollbar in webkit browsers (Chrome, Safari) */
-.timeline-container::-webkit-scrollbar {
+.edu-table {
+  width: 100%;
+  max-width: 1300px;
+  border-collapse: collapse;
+  background-color: #000;
+  font-family: 'Press Start 2P', monospace;
+  box-shadow: 0 0 20px #00ff00;
+}
+
+.edu-table th,
+.edu-table td {
+  border: 2px solid #00ff00;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  word-wrap: break-word;
+}
+
+.edu-table th {
+  background-color: #000000;
+  color: #00ff00;
+  font-size: 1.2rem;
+}
+
+.edu-table tr:nth-child(even) {
+  background-color: #000000;
+}
+
+.edu-table tr:hover {
+  background-color: #000000;
+  box-shadow: 0 0 15px #ff00ff;
+}
+
+/* Hide Scrollbar */
+body::-webkit-scrollbar {
   display: none;
 }
 
-/* Timeline Line */
-.timeline-container::before {
-  content: '';
-  position: absolute;
-  top: 100;
-  left: 50%;
-  width: 4px;
-  height: 140%;
-  background-color: #00ff00;
+/* Education Section - Courses Taken */
+.course-link {
+  color: #fff; /* Default color */
+  text-decoration: none; /* Removes underline */
+  font-size: 1.5rem; /* Size of the eye emoji */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
 }
 
-/* Timeline Item */
-.timeline-item {
-  display: flex;
-  justify-content: flex-start;
+/* Hover effect */
+.course-link:hover {
+  color: #00ff00; /* Green color when hovered */
+}
+
+.course-link:hover {
+  transform: scale(1.5); /* Slightly increase the size of the eye on hover */
+}
+
+/* Courses Taken Modal */
+.modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  z-index: 9999; /* Ensures it is above all other content */
+  justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
-  position: relative;
-}
-
-/* Alternate Right Items */
-.timeline-item.right {
-  justify-content: flex-end;
-}
-
-/* Timeline Content */
-.timeline-content {
-  position: relative;
-  width: calc(55% - 40px);
   padding: 20px;
-  background-color: black;
+}
+
+.modal-content {
+  background-color: #000;
+  margin: 10% auto;
+  padding: 30px;
   border: 2px solid #00ff00;
-  box-shadow: 0px 0px 15px #00ff00;
+  width: 80%;
+  max-width: 700px;
+  max-height: 1800px;
+  font-family: 'Press Start 2P', monospace;
+  box-shadow: 0 0 20px #00ff00;
+  color: #fff;
+  font-size: 1.2rem;
+  justify-content: center;
+}
+
+.close-btn {
+  float: right;
+  font-size: 2rem;
+  color: #00ff00;
+  cursor: pointer;
+}
+
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.modal-table th,
+.modal-table td {
+  border: 1px solid #00ff00;
+  padding: 10px;
   text-align: left;
-  height: 200px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 0.9rem;
 }
 
-/* Timeline Content Text */
-.timeline-content h3,
-.timeline-content h2,
-.timeline-content p,
-.timeline-content ul {
-  color: white;
+.modal-table th {
+  background-color: #000000;
+  color: #00ff00;
+  font-size: 1.0rem;
 }
-
-/* Hover Effect for Timeline Content */
-.timeline-content:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 0px 25px #ff00ff;
-}
-
 
 /* Skills Section */
 .skills-section {
@@ -338,8 +394,8 @@ html, body {
 .skill-title {
   font-size: 1.4rem;
   margin-bottom: 30px;
-  text-shadow: 0 0 5px #ffffff;
   text-transform: lowercase;
+
 }
 
 /* 🔹 Full-Width Adaptive Grid */
@@ -371,8 +427,7 @@ html, body {
 
 .skill-card p {
   font-size: 1.0rem;
-  color: white;
-  text-shadow: 0 0 5px #00ff00;
+  color: #ffffff;
 }
 
 .skills-section::-webkit-scrollbar {
@@ -394,6 +449,134 @@ html, body {
 @media (max-width: 480px) {
   .card-container {
     grid-template-columns: repeat(1, 1fr); /* 1 card per row */
+  }
+}
+
+/* Experience Section */
+.experience-section {
+  padding: 80px 40px;
+  margin: 40px auto 100px;
+  width: 90vw; /* Full viewport width */
+  max-width: 100%;
+  overflow-y: auto;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.timeline-item.left .experience-card {
+  order: 1;
+  margin-right: auto;
+}
+
+.timeline-item.right .experience-card {
+  order: 2;
+  margin-left: auto;
+}
+
+.experience-card {
+  background: #000000;
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+  padding: 20px;
+  width: 40%;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  text-align: left;
+}
+
+.experience-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #ff00ff;
+}
+
+.timeline-item .dot {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: #00ff00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff00;
+  z-index: 2;
+}
+
+.experience-card h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.company {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #00ff00;
+}
+
+.duration {
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+  color: #aaa;
+}
+
+.experience-card ul {
+  list-style: square;
+  padding-left: 20px;
+  font-size: 0.8rem;
+}
+
+.experience-card li {
+  margin-bottom: 8px;
+  color: #ccc;
+}
+
+.experience-section::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* 🔸 Responsive */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
+  }
+
+  .timeline-item .dot {
+    left: 0;
+    transform: translate(0, -50%);
+  }
+
+  .experience-card {
+    width: 100%;
+    margin: 10px 0;
   }
 }
 
