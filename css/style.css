@@ -285,7 +285,7 @@ html, body {
 .edu-table th {
   background-color: #000000;
   color: #00ff00;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .edu-table tr:nth-child(even) {
@@ -455,7 +455,7 @@ body::-webkit-scrollbar {
 /* Experience Section */
 .experience-section {
   padding: 80px 40px;
-  margin: 40px auto 100px;
+  margin: 40px auto 20px;
   width: 90vw; /* Full viewport width */
   max-width: 100%;
   overflow-y: auto;
@@ -501,7 +501,7 @@ body::-webkit-scrollbar {
   border: 2px solid #00ff00;
   box-shadow: 0 0 10px #00ff00;
   padding: 20px;
-  width: 40%;
+  width: 45%;
   border-radius: 8px;
   transition: 0.3s ease;
   text-align: left;
@@ -545,16 +545,17 @@ body::-webkit-scrollbar {
 .experience-card ul {
   list-style: square;
   padding-left: 20px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .experience-card li {
   margin-bottom: 8px;
-  color: #ccc;
+  color: #ffffff;
+  line-height: 1.5;
 }
 
 .experience-section::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 /* 🔸 Responsive */
@@ -578,10 +579,23 @@ body::-webkit-scrollbar {
     width: 100%;
     margin: 10px 0;
   }
+
+  .experience-card h3 {
+    font-size: 1.2rem; /* Larger title font size on mobile */
+  }
+
+  .company {
+    font-size: 0.8rem;
+  }
+
+  .duration {
+    font-size: 0.7rem;
+  }
+
+  .experience-card ul {
+    font-size: 0.8rem;
+  }
 }
-
-
-
 
 /* Footer Styling */
 .footer {
