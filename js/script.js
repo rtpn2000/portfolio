@@ -101,3 +101,13 @@ window.onclick = function(event) {
     }
   });
 };
+
+// On page load, find the matching nav‑link and add .active
+document.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (a.getAttribute('href') === path) {
+      a.classList.add('active');
+    }
+  });
+});
