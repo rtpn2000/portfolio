@@ -147,6 +147,17 @@ html, body {
   background: black;
 }
 
+/* Current Page Indication */
+@keyframes neonBlink {
+  0%, 100% { text-shadow: 0 0 5px #00ff00; color: #00ff00; }
+  50%      { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; color: #ffffff; }
+}
+
+.nav-links a.active {
+  animation: neonBlink 2s infinite ease-in-out;
+}
+
+
 /* Game Card Style */
 .game-card {
   background: #000000;
@@ -271,6 +282,7 @@ html, body {
 
 .edu-table {
   width: 100%;
+  height: 95%;
   max-width: 1300px;
   border-collapse: collapse;
   background-color: #000;
