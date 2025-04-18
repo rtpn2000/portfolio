@@ -1,19 +1,19 @@
+// script.js
+
+// Handling the 'Home' Page.
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize falling stars
   createStars();
-
   // Initially hide the game cards container
   document.getElementById("cardcontainer").style.display = "none";
   document.getElementById("quest").style.display = "none";
-
   // Start typing effect for title and then intro
   typeTitle();
-  setTimeout(typeIntro, 2500); // Adjusted delay for better flow
-  setTimeout(showCards, 4500); // Show cards after intro is done
-  
+  setTimeout(typeIntro, 2500);
+  setTimeout(showCards, 4500); // Displays the game cards after the title has appeared.
 });
 
-// Typing effect for the title
+// Typing effect for the title.
 const titleText = "Hi, This is Ravi Tarun Prasad Nimmalapudi.";
 let i = 0;
 function typeTitle() {
@@ -41,8 +41,10 @@ function typeIntro() {
   }
 }
 
+// Game cards section title.
 const questText = "Select a quest to begin!";
 
+// Displays game cards.
 function showCards() {
   const cardsContainer = document.getElementById("cardcontainer");
   cardsContainer.style.display = "flex";
@@ -52,47 +54,43 @@ function showCards() {
   quest.style.display = "block";
 }
 
+// On-click functionality.
 function navigateTo(page) {
   window.location.href = page;
 }
 
 // Function to generate falling stars dynamically
-// Function to generate falling stars dynamically
 function createStars(numStars = 100) {
   const background = document.querySelector(".background");
-
   for (let i = 0; i < numStars; i++) {
       let star = document.createElement("div");
       star.classList.add("star");
-
       // Random Position & Animation
       let x = Math.random() * window.innerWidth;
       let y = Math.random() * window.innerHeight;
-      let duration = Math.random() * 5 + 3; // Different speeds for a natural effect
-
+      let duration = Math.random() * 5 + 3;
       star.style.left = `${x}px`;
       star.style.top = `${y}px`;
       star.style.animation = `moveStars ${duration}s linear infinite`;
-
       background.appendChild(star);
-
-      // Remove stars and regenerate them to create a continuous effect
       setTimeout(() => {
           star.remove();
-          createStars(1); // Create a new star when one is removed
+          createStars(1);
       }, duration * 1000);
   }
 }
 
+// Handling 'Modals'-1.
 function openModal(id) {
   document.getElementById(id).style.display = 'block';
 }
 
+// Handling 'Modals'-2.
 function closeModal(id) {
   document.getElementById(id).style.display = 'none';
 }
 
-// Optional: close modal if clicking outside the modal content
+// Closes modal if clicking outside the modal content.
 window.onclick = function(event) {
   const modals = document.querySelectorAll(".modal");
   modals.forEach(modal => {
@@ -102,7 +100,29 @@ window.onclick = function(event) {
   });
 };
 
-// On page load, find the matching nav‑link and add .active
+// Handling 'Resume' Modal.
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('resumeModal');
+  const btn = document.getElementById('resumeBtn');
+  const closeBtn = document.querySelector('.close-btn');
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'block';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+
+// Matches nav‑link and add .active - Glows current page.
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname.split('/').pop();
   document.querySelectorAll('.nav-links a').forEach(a => {
