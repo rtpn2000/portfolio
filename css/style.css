@@ -75,7 +75,7 @@ html, body {
   animation: moveStars linear infinite;
 }
 
-/* index Page Styling */
+/* Index Page Styling */
 #title {
   font-size: 1.3rem;
   color: rgb(255, 255, 255);
@@ -203,8 +203,8 @@ html, body {
 
 /* Projects Section */
 .projects-container {
-  width: 190vh;
-  max-height: 73vh;
+  width: 150vh;
+  max-height: 100vh;
   margin: auto;
   padding: 20px;
   overflow-y: auto;
@@ -219,6 +219,7 @@ html, body {
   background-color: black;
   border: 2px solid #00ff00;
   padding: 15px;
+  margin-top: 40px;
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 15px #00ff00;
@@ -230,8 +231,7 @@ html, body {
 
 /* Headings Inside Project Boxes */
 .project-box h3 {
-  color: #ffffff;
-  text-shadow: 0px 0px 8px #00ff00;
+  color: #00ff00;
 }
 
 /* Text Inside Project Boxes */
@@ -239,22 +239,28 @@ html, body {
   color: white;
 }
 
-/* Scrollbar Customization (Optional) */
-.projects-container::-webkit-scrollbar {
-  width: 10px;
+.project-box p li {
+  margin-bottom: 10px;
 }
 
-.projects-container::-webkit-scrollbar-thumb {
-  background-color: #00ff00;
+/* Hover Effects on Project Boxes */
+.project-box:hover {
+  transform: scale(1.03);
+  background-color: #000000;
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+/* Scrollbar Customization */
+.projects-container::-webkit-scrollbar {
+  display: none;
 }
 
 /* Education Section */
-
 .education-table-section {
   padding: 100px 40px;
   margin: 0 auto;
   width: 95vw;
-  min-height: 95vh; /* Fill most of the viewport */
+  min-height: 95vh;
   max-width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -304,31 +310,31 @@ body::-webkit-scrollbar {
 
 /* Education Section - Courses Taken */
 .course-link {
-  color: #fff; /* Default color */
-  text-decoration: none; /* Removes underline */
-  font-size: 1.5rem; /* Size of the eye emoji */
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* Hover effect */
 .course-link:hover {
-  color: #00ff00; /* Green color when hovered */
+  color: #00ff00;
 }
 
 .course-link:hover {
-  transform: scale(1.5); /* Slightly increase the size of the eye on hover */
+  transform: scale(1.5);
 }
 
 /* Courses Taken Modal */
 .modal {
-  display: none; /* Initially hidden */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-  z-index: 9999; /* Ensures it is above all other content */
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -380,15 +386,19 @@ body::-webkit-scrollbar {
 .skills-section {
   padding: 80px 40px;
   margin: 40px auto 100px;
-  width: 90vw; /* Full viewport width */
+  width: 100vw;
   max-width: 100%;
-  overflow-y: auto; /* Prevent unwanted scroll */
+  overflow-y: auto;
+  justify-content: center;
 }
 
 .skill-category {
   margin-bottom: 60px;
   width: 100%;
   text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .skill-title {
@@ -398,21 +408,22 @@ body::-webkit-scrollbar {
 
 }
 
-/* 🔹 Full-Width Adaptive Grid */
+/* Full-Width Adaptive Grid */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Expands dynamically */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  width: 100%; /* Ensures it spans full width */
-  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* 🎮 Neon Game-Style Cards */
+/* Game Style Cards */
 .skill-card {
   background-color: #000000;
   border: 2px solid #00ff00;
   box-shadow: 0 0 10px #00ff00;
-  height: 180px; /* Slightly larger for better balance */
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -426,29 +437,29 @@ body::-webkit-scrollbar {
 }
 
 .skill-card p {
-  font-size: 1.0rem;
+  font-size: 0.9rem;
   color: #ffffff;
 }
 
 .skills-section::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar in webkit browsers */
+  display: none;
 }
 
 .skills-section {
-  -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer */
-  scrollbar-width: none;  /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* 📱 Responsive Adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .card-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
   .card-container {
-    grid-template-columns: repeat(1, 1fr); /* 1 card per row */
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -456,7 +467,7 @@ body::-webkit-scrollbar {
 .experience-section {
   padding: 80px 40px;
   margin: 40px auto 20px;
-  width: 90vw; /* Full viewport width */
+  width: 90vw;
   max-width: 100%;
   overflow-y: auto;
 }
@@ -558,7 +569,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-/* 🔸 Responsive */
+/* Responsive */
 @media (max-width: 768px) {
   .timeline::before {
     left: 8px;
@@ -581,7 +592,7 @@ body::-webkit-scrollbar {
   }
 
   .experience-card h3 {
-    font-size: 1.2rem; /* Larger title font size on mobile */
+    font-size: 1.2rem;
   }
 
   .company {
@@ -597,6 +608,103 @@ body::-webkit-scrollbar {
   }
 }
 
+/* About-Me Section */ 
+.main-container {
+  height: calc(100vh - 100px);
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.main-container::-webkit-scrollbar {
+  display: none;
+}
+
+.player-stats-container {
+  width: 90vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Press Start 2P', cursive;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.stats-box {
+  max-width: 500px;
+  background: rgba(0, 255, 255, 0.05);
+  padding: 30px;
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 15px #00ff00;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.stats-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+.about-title {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  text-transform: lowercase;
+}
+
+.stat-line {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  background: rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #00ff00;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(55, 153, 55, 0.1);
+}
+
+.stat-line span {
+  color: #00ff00;
+  margin-right: 10px;
+  font-weight: bold;
+  justify-content: left;
+}
+
+.special-abilities li {
+  margin-bottom: 10px;
+}
+
+.avatar-box img {
+  width: 320px;
+  border-radius: 15px;
+  border: 3px solid #00ff00;
+  box-shadow: 0 0 25px #00ff00;
+}
+
+.languages-section {
+  margin: 60px auto;
+  padding: 20px 20px;
+  color: #ffffff;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.hobbies-section {
+  padding: 20px 20px;
+  color: #ffffff;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.section-header {
+  font-size: 1.4rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-transform: lowercase;
+}
+
 /* Footer Styling */
 .footer {
   position: fixed;
@@ -607,10 +715,4 @@ body::-webkit-scrollbar {
   color: #ffffff;
   text-align: center;
   line-height: 50px;
-}
-
-/* Footer Text Glow Effect */
-.footer p {
-  font-family: 'Press Start 2P', cursive; /* Retro arcade font */
-  font-size: 0.9rem; /* Adjust font size as needed */
 }
