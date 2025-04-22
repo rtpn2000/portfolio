@@ -82,7 +82,7 @@ function createStars(numStars = 100) {
 
 // Handling 'Modals'-1.
 function openModal(id) {
-  document.getElementById(id).style.display = 'block';
+  document.getElementById(id).style.display = 'flex';
 }
 
 // Handling 'Modals'-2.
