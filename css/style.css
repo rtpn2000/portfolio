@@ -114,7 +114,6 @@ html, body {
   font-size: 1.2rem;
   color: #02f002;
   font-family: 'Press Start 2P', cursive;
-  text-transform: uppercase;
   white-space: nowrap;
   padding-right: 20px;
   flex-shrink: 0;
@@ -353,7 +352,7 @@ body::-webkit-scrollbar {
 
 .modal-content {
   background-color: #000;
-  margin: 10% auto;
+  margin: 10%;
   padding: 30px;
   border: 2px solid #00ff00;
   width: 80%;
@@ -362,7 +361,7 @@ body::-webkit-scrollbar {
   font-family: 'Press Start 2P', monospace;
   box-shadow: 0 0 20px #00ff00;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   justify-content: center;
 }
 
@@ -384,13 +383,18 @@ body::-webkit-scrollbar {
   border: 1px solid #00ff00;
   padding: 10px;
   text-align: left;
-  font-size: 0.9rem;
 }
 
 .modal-table th {
   background-color: #000000;
   color: #00ff00;
   font-size: 1.0rem;
+}
+
+.modal-table tr {
+  background-color: #000000;
+  font-size: 0.9rem;
+  color: #ffffff;
 }
 
 /* Skills Section */
