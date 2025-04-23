@@ -503,6 +503,30 @@ body::-webkit-scrollbar {
   background: #00ff00;
   box-shadow: 0 0 10px #00ff00;
   transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #00ff00;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px #00ff00;
+}
+
+.bottom-cap {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #00ff00;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px #00ff00;
 }
 
 .timeline-item {
@@ -762,7 +786,7 @@ body::-webkit-scrollbar {
   box-shadow: 0 0 20px #00ff00;
 }
 
-/* Resume Modal ONLY */
+/* Resume Modal */
 #resumeModal {
   display: none;
   position: fixed;
@@ -782,14 +806,14 @@ body::-webkit-scrollbar {
   padding: 20px;
   border: 3px solid #00ff00;
   width: 80%;
-  max-width: 900px;
+  max-width: 800px;
   box-shadow: 0 0 25px #00ff00;
   border-radius: 16px;
   position: relative;
 }
 
 #resumeModal .resume-frame {
-  width: 100%;
+  width: 90%;
   height: 600px;
   border-radius: 10px;
   box-shadow: 0 0 12px #00ff00;
@@ -803,10 +827,6 @@ body::-webkit-scrollbar {
   font-size: 24px;
   cursor: pointer;
   transition: color 0.3s;
-}
-
-#resumeModal .close-btn:hover {
-  color: #ffffff;
 }
 
 /* Footer Styling */
