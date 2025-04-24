@@ -104,11 +104,11 @@ window.onclick = function(event) {
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('resumeModal');
   const btn = document.getElementById('resumeBtn');
-  const closeBtn = document.querySelector('.close-btn');
+  const closeBtn = document.getElementById('resumeCloseBtn');
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    modal.style.display = 'block';
+    modal.style.display = 'flex';
   });
 
   closeBtn.addEventListener('click', () => {
@@ -131,3 +131,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// Handling 'Contact Me' Modal.
+const contactBtn = document.getElementById("contactBtn");
+const contactModal = document.getElementById("contactModal");
+const closeContactBtn = document.getElementById("closeContactBtn");
+
+contactBtn.addEventListener("click", () => {
+  contactModal.style.display = "flex";
+});
+
+closeContactBtn.addEventListener("click", () => {
+  contactModal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === contactModal) {
+    contactModal.style.display = "none";
+  }
+});
+
+// Incrementing 'Like Counter'.
+document.addEventListener("DOMContentLoaded", function () {
+  const likeBtn = document.getElementById("likeBtn");
+  const likeCount = document.getElementById("likeCount");
+
+  // Retrieve like state from localStorage
+  let count = parseInt(localStorage.getItem("likeCount")) || 0;
+  let liked = localStorage.getItem("liked") === "true";
+  likeCount.textContent = count;
+
+  if (liked) {
+    likeBtn.classList.add("liked");
+  }
+  likeBtn.addEventListener("click", function () {
+    const wasLiked = likeBtn.classList.contains("liked");
+
+    if (wasLiked) {
+      count = Math.max(0, count - 1);
+      likeBtn.classList.remove("liked");
+      localStorage.setItem("liked", "false");
+      showToast("I'll pretend I didn't see that!");
+    } else {
+      count += 1;
+      likeBtn.classList.add("liked");
+      localStorage.setItem("liked", "true");
+      showToast('Another fan joined the cult!');
+    }
+
+    likeCount.textContent = count;
+    localStorage.setItem("likeCount", count.toString());
+  });
+});
+
+function showToast(message) {
+  const toast = document.getElementById("like-toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2000);
+}

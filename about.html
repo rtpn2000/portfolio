@@ -53,8 +53,13 @@
 
           <!-- Picture -->
           <div class="avatar-box">
-            <img src="images/your-neon-avatar.jpg" alt="Neon Avatar" />
-          </div>
+            <img src="assets/prof_pic.png" alt="Neon Avatar" />
+
+            <div class="like-section">
+              <button class="neon-heart" id="likeBtn">♡</button>
+              <span id="likeCount">0</span>
+            </div>
+
         </div>
       </section>
 
@@ -85,18 +90,36 @@
     <!-- Sticky Sidebar - Resume/Contact -->
     <div class="fixed-sidebar">
       <div class="sidebar-bar"></div>
-        <a href="mailto:youremail@example.com" class="sidebar-icon" title="Contact Me">📞</a>
-        <a href="#" class="sidebar-icon" id="resumeBtn" title="View Resume">📃</a>
-        <div class="sidebar-bar"></div>
+      <a href="#" class="sidebar-icon" id="contactBtn" title="Contact Me">📞</a>
+      <a href="#" class="sidebar-icon" id="resumeBtn" title="View Resume">📃</a>
+      <div class="sidebar-bar"></div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeContactBtn">&times;</span>
+        <h2>Message the Dev Boss!</h2>
+        <h1>👾</h1>
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="your gamer-tag/name would do!" required>
+          <input type="email" name="email" placeholder="your email for the return transmission!" required>
+          <textarea name="message" rows="5" placeholder="bug? praise? secret code? drop it here!" required></textarea>
+          <button type="submit">launch</button>
+        </form>
+      </div>
     </div>
 
     <!-- Resume Modal -->
     <div id="resumeModal" class="modal">
       <div class="modal-content">
-    <span class="close-btn">&times;</span>
+    <span class="close-btn" id="resumeCloseBtn">&times;</span>
     <iframe src="assets/rtpn_Resume.pdf" frameborder="0" class="resume-frame"></iframe>
       </div>
     </div>
+
+    <!-- Toast Message -->
+    <div id="like-toast" class="toast-message"></div>
 
   <!-- Footer -->
   <footer class="footer">
