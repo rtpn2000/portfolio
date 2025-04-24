@@ -763,10 +763,10 @@ body::-webkit-scrollbar {
 
 .toast-message {
   position: fixed;
-  top: 20px;
+  margin-top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  background: #111;
+  background: #000000;
   color: #00ff00;
   padding: 12px 24px;
   font-family: 'Press Start 2P', cursive;
@@ -784,7 +784,7 @@ body::-webkit-scrollbar {
   font-size: 1.2em;
   line-height: 1;
   display: inline-block;
-  transform: translateY(1px); /* tweak this value if needed */
+  transform: translateY(1px);
 }
 
 .toast-message.show {
