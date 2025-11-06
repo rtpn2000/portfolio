@@ -246,10 +246,14 @@ html, body {
 /* Text Inside Project Boxes */
 .project-box p {
   color: white;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
-.project-box p li {
+.project-box li {
   margin-bottom: 10px;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 /* Hover Effects on Project Boxes */
