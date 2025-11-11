@@ -858,6 +858,145 @@ body::-webkit-scrollbar {
   box-shadow: 0 0 20px #00ff00;
 }
 
+/* Tableau Modals */
+/* NBA Modal */
+#nbaModal .modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 98vw;
+  max-width: 1100px;
+  height: 80vh;
+  max-height: 900px;
+  overflow: auto;
+  margin: 0;
+  padding: 50px 30px 30px 30px;
+  border: 3px solid #00ff00;
+  box-shadow: 0 0 25px #00ff00;
+  border-radius: 16px;
+}
+
+#nbaModal .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  color: #00ff00;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* Kanye Modal */
+#kanyeModal .modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 98vw;
+  max-width: 1100px;
+  height: 80vh;
+  max-height: 900px;
+  overflow: auto;
+  margin: 0;
+  padding: 50px 30px 30px 30px;
+  border: 3px solid #00ff00;
+  box-shadow: 0 0 25px #00ff00;
+  border-radius: 16px;
+}
+
+#kanyeModal .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  color: #00ff00;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* Disney Vacay Modal */
+#disneyModal .modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 98vw;
+  max-width: 1100px;
+  height: 80vh;
+  max-height: 900px;
+  overflow: auto;
+  margin: 0;
+  padding: 50px 30px 30px 30px;
+  border: 3px solid #00ff00;
+  box-shadow: 0 0 25px #00ff00;
+  border-radius: 16px;
+}
+
+#disneyModal .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  color: #00ff00;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* View Dashboard Links */
+.dashboard-links {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #f5f5f5;
+}
+
+.dashboard-links li {
+  margin: 10px 0;
+}
+
+.view-dashboard {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.view-dashboard:hover {
+  color: #00ff00;
+  transform: translateX(4px);
+}
+
+.view-dashboard::before {
+  content: "➤";
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.view-dashboard:hover::before {
+  transform: scale(1.2) rotate(10deg);
+}
+
 /* Resume Modal */
 #resumeModal {
   display: none;

@@ -38,6 +38,54 @@
         </div>
 
         <div class="project-box">
+            <h3><em>When To Take Your Disney Vacay?</em></h3>
+            <ul>
+            <p>
+              "When To Take Your Disney Vacay" is an interactive Tableau dashboard designed to help users determine the optimal time to visit Disney parks. 
+               By combining ride wait times, weather data, and visitor sentiment, the dashboard provides a holistic view of park conditions to enhance planning and overall experience.
+            </p>
+            <li><em>Wait Time Dashboard:</em> Displays hourly ride wait times and a dynamic list of rides with the shortest waits, allowing users to plan their day efficiently.</li>
+            <li><em>Weather Dashboard:</em> Shows hourly temperatures and the chance of rain for selected days, helping visitors choose comfortable and dry periods for their visit.</li>
+            <li><em>Emotion Dashboard:</em> Visualizes visitor sentiment using word clouds from best and worst reviews and emotion-based bar charts, highlighting positive and negative experiences during selected dates.</li>
+            <li><em>Date Range Interaction:</em> Users can select a date range that updates all dashboards simultaneously, providing a synchronized and dynamic planning experience.</li>
+            <a id="openDisneyModal" href="#" class="view-dashboard">
+                <bold><em>Launch Dashboard</em></bold>
+            </a>
+            </ul>
+          </div>
+
+          <div id="disneyModal" class="modal">
+            <div class="modal-content">
+              <span class="close-btn" id="disneyCloseBtn">&times;</span>
+
+            <div class='tableauPlaceholder' id='vizDisney' style='position: relative'>
+              <noscript>
+              <a href='#'>
+              <img alt='Disney Vacation Planner'
+              src='https://public.tableau.com/static/images/Wh/WhenToPlanA_DisneyVacay/WaitTimeDashboard/1_rss.png'
+              style='border: none' />
+              </a>
+              </noscript>
+              <object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='WhenToPlanA_DisneyVacay/WaitTimeDashboard' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Wh/WhenToPlanA_DisneyVacay/WaitTimeDashboard/1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-GB' />
+              </object>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-box">
             <h3><em>Customer Segmentation</em></h3>
             <ul>
                 <p>This project focuses on segmenting retail customers into meaningful clusters using the RFM (Recency, Frequency, Monetary) model. By understanding customer behaviour patterns through transactional data, the model enables retail businesses to drive targeted marketing, enhance customer retention, and support informed decision-making.</p>
@@ -45,6 +93,54 @@
                 <li>Applied K-Means and Hierarchical Clustering to group customers into key segments.</li>
                 <li>Visualized results using interactive dashboards.</li>
             </ul>
+        </div>
+
+        <div class="project-box">
+            <h3><em>NBA Shot Chart Analysis</em></h3>
+            <ul>
+                <p>
+                    NBA Shot Chart Analysis is a Tableau visualization that explores shooting trends and player performances in the NBA since 2000.
+                    This project aims to provide fans and analysts with insights into how shooting strategies, player tendencies, and overall gameplay have evolved over the years.
+                </p>
+                <li>Uncovers the evolution of NBA shooting strategies from 2000 to the present.</li>
+                <li>Analyzes player shot trends, tendencies, and the impact of individual styles on team performance.</li>
+                <li>Highlights the effectiveness of 2-pointers vs. 3-pointers and changes in distance-based shooting patterns.</li>
+                <a id="openNBAModal" href="#" class="view-dashboard">
+                  <bold><em>Launch Dashboard</em></bold>
+                </a>
+            </ul>
+        </div>
+
+            <div id="nbaModal" class="modal">
+              <div class="modal-content">
+              <span class="close-btn" id="nbaCloseBtn">&times;</span>
+
+            <div class='tableauPlaceholder' id='vizNBA' style='position: relative'>
+            <noscript>
+            <a href='#'>
+              <img alt='NBA Shot Chart'
+              src='https://public.tableau.com/static/images/CP/CPSC5320_VA3_NBA_Shotchart_Team3/NBAShotChart/1_rss.png'
+              style='border: none' />
+            </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='CPSC5320_VA3_NBA_Shotchart_Team3/NBAShotChart' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image'
+                value='https://public.tableau.com/static/images/CP/CPSC5320_VA3_NBA_Shotchart_Team3/NBAShotChart/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-GB' />
+            </object>
+            </div>
+          </div>
         </div>
 
         <div class="project-box">
@@ -58,11 +154,58 @@
         </div>
 
         <div class="project-box">
+            <h3><em>Kanye West Twitter Analysis</em></h3>
+            <ul>
+                <p>
+                  This is a Tableau visualization that examines public conversations surrounding Kanye West on Twitter. 
+                  This project provides insights into where, when, and how audiences engage with his persona, analyzing sentiment, vocabulary, trending topics, and the evolving narrative around his career and public image.
+                </p>
+                <li>Identifies the most discussed times and locations in the USA related to Kanye West.</li>
+                <li>Analyzes the language, sentiment, and patterns in tweets to capture approval, criticism, and audience engagement.</li>
+                <li>Highlights trending topics and key subjects associated with Kanye West across the Twitter landscape.</li>
+                <a id="openKanyeModal" href="#" class="view-dashboard">
+                  <bold><em>Launch Dashboard</em></bold>
+                </a>
+            </ul>
+        </div>
+
+        <div id="kanyeModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn" id="kanyeCloseBtn">&times;</span>
+
+            <div class='tableauPlaceholder' id='vizKanye' style='position: relative'>
+              <noscript>
+                <a href='#'>
+                  <img alt='Kanye West Twitter Analysis'
+                  src='https://public.tableau.com/static/images/Tw/TwitteratiReactionAnalysis_KanyeWest_VA7_Team3/TwitteratiReactionAnalysis/1_rss.png'
+                  style='border: none' />
+                </a>
+              </noscript>
+              <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='TwitteratiReactionAnalysis_KanyeWest_VA7_Team3/TwitteratiReactionAnalysis' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/Tw/TwitteratiReactionAnalysis_KanyeWest_VA7_Team3/TwitteratiReactionAnalysis/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-GB' />
+              </object>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-box">
           <h3><em>Scaling Sugarscape Simulation using SLURM</em></h3>
           <ul>
-            <li>Simulated an agent-based model using the Sugarscape framework</li>
-            <li>Optimized model performance using parallel processing with SLURM</li>
-            <li>Analyzed and visualized simulation results to study population dynamics</li>
+            <li>Simulated an agent-based model using the Sugarscape framework.</li>
+            <li>Optimized model performance using parallel processing with SLURM (Simple Linux Utility for Resource Management).</li>
+            <li>Analyzed and visualized simulation results to study population dynamics.</li>
           </ul>
         </div>
 
@@ -109,18 +252,18 @@
         <div class="project-box">
             <h3>Face Recognition</h3>
             <ul>
-                <li>Implemented a face recognition system using deep learning techniques</li>
-                <li>Used OpenCV and Dlib for face detection and recognition</li>
-                <li>Built a security system with face-based authentication for access control</li>
+                <li>Implemented a face recognition system using deep learning techniques.</li>
+                <li>Used OpenCV and Dlib for face detection and recognition.</li>
+                <li>Built a security system with face-based authentication for access control.</li>
             </ul>
         </div>
 
         <div class="project-box">
             <h3>Hotel Database</h3>
             <ul>
-                <li>Developed a database system to manage hotel reservations and customer data</li>
-                <li>Implemented SQL queries for booking management and room availability</li>
-                <li>Created a user interface for staff to access and update reservation information</li>
+                <li>Developed a database system to manage hotel reservations and customer data.</li>
+                <li>Implemented SQL queries for booking management and room availability.</li>
+                <li>Created a user interface for staff to access and update reservation information.</li>
             </ul>
         </div>
         
@@ -153,7 +296,7 @@
   <div id="resumeModal" class="modal">
     <div class="modal-content">
   <span class="close-btn" id="resumeCloseBtn">&times;</span>
-  <iframe src="assets/rtpn_Resume.pdf" frameborder="0" class="resume-frame"></iframe>
+  <iframe src="assets/resume_RTPN.pdf" frameborder="0" class="resume-frame"></iframe>
     </div>
   </div>
 
