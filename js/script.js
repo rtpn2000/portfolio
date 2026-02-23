@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize falling stars
   createStars();
   // Initially hide the game cards container
-  document.getElementById("cardcontainer").style.display = "none";
-  document.getElementById("quest").style.display = "none";
+  const cardContainer = document.getElementById("cardcontainer");
+  const quest = document.getElementById("quest");
+  if (cardContainer) cardContainer.style.display = "none";
+  if (quest) quest.style.display = "none";
   // Start typing effect for title and then intro
   typeTitle();
   setTimeout(typeIntro, 2500);
@@ -47,11 +49,12 @@ const questText = "Select a quest to begin!";
 // Displays game cards.
 function showCards() {
   const cardsContainer = document.getElementById("cardcontainer");
-  cardsContainer.style.display = "flex";
-
   const quest = document.getElementById("quest");
-  quest.innerHTML = questText;
-  quest.style.display = "block";
+  if (cardsContainer) cardsContainer.style.display = "flex";
+  if (quest) {
+    quest.innerHTML = questText;
+    quest.style.display = "block";
+  }
 }
 
 // On-click functionality.
@@ -157,12 +160,14 @@ const nbaModal = document.getElementById("nbaModal");
 const openNBAModal = document.getElementById("openNBAModal");
 const nbaCloseBtn = document.getElementById("nbaCloseBtn");
 
-// Refreshing the viz.
-openNBAModal.addEventListener("click", (e) => {
-  e.preventDefault();
-  nbaModal.style.display = "block";
-  const divElement = document.getElementById("vizNBA");
-  divElement.innerHTML = `<object class='tableauViz' style='display:none;'>
+if (nbaModal && openNBAModal && nbaCloseBtn) {
+  // Refreshing the viz.
+  openNBAModal.addEventListener("click", (e) => {
+    e.preventDefault();
+    nbaModal.style.display = "block";
+    const divElement = document.getElementById("vizNBA");
+    if (!divElement) return;
+    divElement.innerHTML = `<object class='tableauViz' style='display:none;'>
     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
     <param name='embed_code_version' value='3' />
     <param name='site_root' value='' />
@@ -178,18 +183,19 @@ openNBAModal.addEventListener("click", (e) => {
     <param name='language' value='en-GB' />
   </object>`;
 
-  setTimeout(loadTableauViz, 300);
-});
+    setTimeout(loadTableauViz, 300);
+  });
 
-nbaCloseBtn.addEventListener("click", () => {
-  nbaModal.style.display = "none";
-});
-
-window.addEventListener("click", (event) => {
-  if (event.target === nbaModal) {
+  nbaCloseBtn.addEventListener("click", () => {
     nbaModal.style.display = "none";
-  }
-});
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === nbaModal) {
+      nbaModal.style.display = "none";
+    }
+  });
+}
 function loadTableauViz() {
   const divElement = document.getElementById("vizNBA");
   const vizElement = divElement.getElementsByTagName("object")[0];
@@ -208,12 +214,14 @@ const kanyeModal = document.getElementById("kanyeModal");
 const openKanyeModal = document.getElementById("openKanyeModal");
 const kanyeCloseBtn = document.getElementById("kanyeCloseBtn");
 
-// Refreshing the viz.
-openKanyeModal.addEventListener("click", (e) => {
-  e.preventDefault();
-  kanyeModal.style.display = "block";
-  const divElement = document.getElementById("vizKanye");
-  divElement.innerHTML = `<object class='tableauViz' style='display:none;'>
+if (kanyeModal && openKanyeModal && kanyeCloseBtn) {
+  // Refreshing the viz.
+  openKanyeModal.addEventListener("click", (e) => {
+    e.preventDefault();
+    kanyeModal.style.display = "block";
+    const divElement = document.getElementById("vizKanye");
+    if (!divElement) return;
+    divElement.innerHTML = `<object class='tableauViz' style='display:none;'>
     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
     <param name='embed_code_version' value='3' />
     <param name='site_root' value='' />
@@ -228,16 +236,17 @@ openKanyeModal.addEventListener("click", (e) => {
     <param name='display_count' value='yes' />
     <param name='language' value='en-GB' />
   </object>`;
-  setTimeout(loadKanyeViz, 300);
-});
-kanyeCloseBtn.addEventListener("click", () => {
-  kanyeModal.style.display = "none";
-});
-window.addEventListener("click", (event) => {
-  if (event.target === kanyeModal) {
+    setTimeout(loadKanyeViz, 300);
+  });
+  kanyeCloseBtn.addEventListener("click", () => {
     kanyeModal.style.display = "none";
-  }
-});
+  });
+  window.addEventListener("click", (event) => {
+    if (event.target === kanyeModal) {
+      kanyeModal.style.display = "none";
+    }
+  });
+}
 function loadKanyeViz() {
   const divElement = document.getElementById("vizKanye");
   const vizElement = divElement.getElementsByTagName("object")[0];
@@ -255,12 +264,14 @@ const disneyModal = document.getElementById("disneyModal");
 const openDisneyModal = document.getElementById("openDisneyModal");
 const disneyCloseBtn = document.getElementById("disneyCloseBtn");
 
-// Refreshing the viz.
-openDisneyModal.addEventListener("click", (e) => {
-  e.preventDefault();
-  disneyModal.style.display = "block";
-  const divElement = document.getElementById("vizDisney");
-  divElement.innerHTML = `<object class='tableauViz' style='display:none;'>
+if (disneyModal && openDisneyModal && disneyCloseBtn) {
+  // Refreshing the viz.
+  openDisneyModal.addEventListener("click", (e) => {
+    e.preventDefault();
+    disneyModal.style.display = "block";
+    const divElement = document.getElementById("vizDisney");
+    if (!divElement) return;
+    divElement.innerHTML = `<object class='tableauViz' style='display:none;'>
     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
     <param name='embed_code_version' value='3' />
     <param name='site_root' value='' />
@@ -275,17 +286,18 @@ openDisneyModal.addEventListener("click", (e) => {
     <param name='display_count' value='yes' />
     <param name='language' value='en-GB' />
   </object>`;
-  setTimeout(loadDisneyViz, 300);
-});
-disneyCloseBtn.addEventListener("click", () => {
-  disneyModal.style.display = "none";
-});
-
-window.addEventListener("click", (event) => {
-  if (event.target === disneyModal) {
+    setTimeout(loadDisneyViz, 300);
+  });
+  disneyCloseBtn.addEventListener("click", () => {
     disneyModal.style.display = "none";
-  }
-});
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === disneyModal) {
+      disneyModal.style.display = "none";
+    }
+  });
+}
 
 function loadDisneyViz() {
   const divElement = document.getElementById("vizDisney");
