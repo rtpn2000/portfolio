@@ -140,19 +140,21 @@ const contactBtn = document.getElementById("contactBtn");
 const contactModal = document.getElementById("contactModal");
 const closeContactBtn = document.getElementById("closeContactBtn");
 
-contactBtn.addEventListener("click", () => {
-  contactModal.style.display = "flex";
-});
+if (contactBtn && contactModal && closeContactBtn) {
+  contactBtn.addEventListener("click", () => {
+    contactModal.style.display = "flex";
+  });
 
-closeContactBtn.addEventListener("click", () => {
-  contactModal.style.display = "none";
-});
-
-window.addEventListener("click", (e) => {
-  if (e.target === contactModal) {
+  closeContactBtn.addEventListener("click", () => {
     contactModal.style.display = "none";
-  }
-});
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === contactModal) {
+      contactModal.style.display = "none";
+    }
+  });
+}
 
 // Handling the 'Tableau Visualizations' Modal.
 // NBA Shot Chart Modal.
@@ -199,10 +201,13 @@ if (nbaModal && openNBAModal && nbaCloseBtn) {
 function loadTableauViz() {
   const divElement = document.getElementById("vizNBA");
   const vizElement = divElement.getElementsByTagName("object")[0];
+  const width = divElement.offsetWidth || window.innerWidth;
+  const preferredHeight = Math.round(width * 0.75);
+  const minHeight = window.innerWidth <= 480 ? 320 : 420;
+  const maxHeight = Math.round(window.innerHeight * 0.72);
 
   vizElement.style.width = "100%";
-  vizElement.style.height = (divElement.offsetWidth > 800 ? divElement.offsetWidth * 0.75 :
-                            divElement.offsetWidth > 500 ? divElement.offsetWidth * 0.75 : 727) + "px";
+  vizElement.style.height = Math.max(minHeight, Math.min(preferredHeight, maxHeight)) + "px";
 
   const scriptElement = document.createElement("script");
   scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
@@ -250,9 +255,13 @@ if (kanyeModal && openKanyeModal && kanyeCloseBtn) {
 function loadKanyeViz() {
   const divElement = document.getElementById("vizKanye");
   const vizElement = divElement.getElementsByTagName("object")[0];
+  const width = divElement.offsetWidth || window.innerWidth;
+  const preferredHeight = Math.round(width * 0.75);
+  const minHeight = window.innerWidth <= 480 ? 320 : 420;
+  const maxHeight = Math.round(window.innerHeight * 0.72);
 
   vizElement.style.width = "100%";
-  vizElement.style.height = (window.innerHeight * 0.85) + "px";
+  vizElement.style.height = Math.max(minHeight, Math.min(preferredHeight, maxHeight)) + "px";
 
   const scriptElement = document.createElement("script");
   scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
@@ -302,9 +311,13 @@ if (disneyModal && openDisneyModal && disneyCloseBtn) {
 function loadDisneyViz() {
   const divElement = document.getElementById("vizDisney");
   const vizElement = divElement.getElementsByTagName("object")[0];
+  const width = divElement.offsetWidth || window.innerWidth;
+  const preferredHeight = Math.round(width * 0.75);
+  const minHeight = window.innerWidth <= 480 ? 320 : 420;
+  const maxHeight = Math.round(window.innerHeight * 0.72);
 
   vizElement.style.width = "100%";
-  vizElement.style.height = (window.innerHeight * 0.75) + "px";
+  vizElement.style.height = Math.max(minHeight, Math.min(preferredHeight, maxHeight)) + "px";
 
   const scriptElement = document.createElement("script");
   scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
@@ -315,6 +328,7 @@ function loadDisneyViz() {
 document.addEventListener("DOMContentLoaded", function () {
   const likeBtn = document.getElementById("likeBtn");
   const likeCount = document.getElementById("likeCount");
+  if (!likeBtn || !likeCount) return;
 
   // Retrieve like state from localStorage
   let count = parseInt(localStorage.getItem("likeCount")) || 0;
