@@ -1128,3 +1128,314 @@ body::-webkit-scrollbar {
   text-align: center;
   line-height: 50px;
 }
+
+/* Shared layout fixes for desktop + mobile */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: auto;
+}
+
+body {
+  display: block;
+  overflow-y: auto;
+  padding-top: 74px;
+  padding-bottom: 84px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.navbar {
+  height: auto;
+  min-height: 60px;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 28px;
+  margin-top: 0;
+  justify-content: center;
+}
+
+.navbar .logo {
+  position: absolute;
+  left: 28px;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.nav-links {
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 14px;
+  flex-grow: 0;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.main-container,
+.projects-container,
+.skills-section,
+.experience-section,
+.education-table-section {
+  width: min(1100px, calc(100vw - 48px));
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-container {
+  height: auto;
+  min-height: calc(100vh - 180px);
+  margin-bottom: 16px;
+}
+
+.projects-container {
+  width: min(1200px, calc(100vw - 48px));
+  max-height: none;
+  overflow-y: visible;
+  margin-top: 90px;
+  margin-bottom: 30px;
+  padding: 20px 16px;
+}
+
+.project-box {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.player-stats-container {
+  width: 100%;
+  gap: 24px;
+  padding: 10px 8px;
+}
+
+.stats-box {
+  width: 100%;
+  max-width: 640px;
+}
+
+.avatar-box {
+  width: 100%;
+  max-width: 480px;
+}
+
+.avatar-box img {
+  margin-top: 0;
+  width: min(420px, 88vw);
+  max-width: 100%;
+  height: auto;
+}
+
+.like-section {
+  margin-left: 0;
+  justify-content: center;
+}
+
+.education-table-section {
+  overflow-x: auto;
+  align-items: flex-start;
+  padding: 100px 10px 20px;
+}
+
+.edu-table {
+  width: 100%;
+  min-width: 760px;
+}
+
+@media (max-width: 992px) {
+  .navbar .logo {
+    width: auto;
+    text-align: center;
+    position: static;
+    left: auto;
+    margin-right: 0;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem;
+    padding: 8px 10px;
+  }
+
+  .nav-links {
+    margin: 0;
+    width: 100%;
+  }
+
+  .fixed-sidebar {
+    left: 50%;
+    top: auto;
+    bottom: 76px;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .sidebar-bar {
+    width: 48px;
+    height: 4px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 1280px) {
+  .navbar {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .navbar .logo {
+    width: 100%;
+    text-align: center;
+    position: static;
+    left: auto;
+    margin-right: 0;
+  }
+
+  .nav-links {
+    width: 100%;
+    margin: 0;
+    row-gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+    padding: 8px 9px;
+  }
+
+  body {
+    padding-top: 96px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 98px;
+    padding-bottom: 24px;
+  }
+
+  .section-header,
+  .skill-title,
+  .about-title {
+    font-size: 1rem;
+  }
+
+  .stat-line,
+  .project-box p,
+  .project-box li,
+  .experience-card li,
+  .company,
+  .duration,
+  .edu-table th,
+  .edu-table td {
+    font-size: 0.7rem;
+    line-height: 1.6;
+  }
+
+  .projects-container,
+  .skills-section,
+  .experience-section,
+  .main-container {
+    width: calc(100vw - 22px);
+  }
+
+  .project-box {
+    margin-top: 16px;
+    padding: 12px;
+  }
+
+  .experience-section {
+    padding: 80px 12px 20px;
+  }
+
+  .skills-section {
+    padding: 80px 10px 20px;
+  }
+
+  .education-table-section {
+    width: calc(100vw - 6px);
+  }
+
+  .modal-content,
+  #contactModal .modal-content,
+  #resumeModal .modal-content {
+    width: 94%;
+    margin: 12% auto;
+    padding: 18px 14px;
+  }
+
+  #contactModal input,
+  #contactModal textarea,
+  #contactModal button {
+    font-size: 0.55rem;
+    line-height: 1.6;
+  }
+
+  #resumeModal .resume-frame {
+    width: 100%;
+    height: 60vh;
+  }
+
+  .footer {
+    position: static;
+    height: auto;
+    line-height: 1.6;
+    padding: 14px 10px;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 118px;
+  }
+
+  .navbar {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 0.65rem;
+    padding: 7px 8px;
+    border-width: 2px;
+    box-shadow: 2px 2px 0 #37d606;
+  }
+
+  .game-card {
+    width: 100%;
+    max-width: 300px;
+    height: 190px;
+  }
+
+  .fixed-sidebar {
+    bottom: 18px;
+    gap: 10px;
+  }
+
+  .sidebar-bar {
+    display: none;
+  }
+
+  .sidebar-icon {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .edu-table {
+    min-width: 640px;
+  }
+}
