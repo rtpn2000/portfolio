@@ -5,13 +5,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🔰 Projects</title>
+    <title>Projects</title>
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Animated Background -->
     <div class="background"></div>
 
     <div class="navbar">
@@ -26,60 +25,56 @@
     </div>
 
     <div class="projects-container">
-
         <div class="project-box">
           <h3><em>DVPO StaG</em></h3>
           <ul>
-            <p>DVPO StaG is a chatbot system designed to support survivors of domestic violence in Washington State by helping them file for Domestic Violence Protection Orders (DVPOs). The platform focuses on legal precision, and accessibility, ensuring that survivors feel heard, supported, and guided throughout a difficult legal process.</p>
-            <li>Chatbot built on Meta LLaMA 3.1, to conduct structured yet conversational interviews with survivors to gather legally relevant information.</li>
+            <p>DVPO StaG is a chatbot system designed to support survivors of domestic violence in Washington State by helping them file for Domestic Violence Protection Orders (DVPOs). The platform focuses on legal precision and accessibility, ensuring that survivors feel heard, supported, and guided throughout a difficult legal process.</p>
+            <li>Chatbot built on Meta LLaMA 3.1 to conduct structured yet conversational interviews with survivors to gather legally relevant information.</li>
             <li>Integrated a RAG pipeline with FAISS indexing to provide context-aware, legally accurate responses.</li>
-            <li>Automatically generates legally-sound survivor statements based on user responses. These statements are designed to reduce legal ambiguity and increase the likelihood of petition approval.</li>
+            <li>Automatically generates legally sound survivor statements based on user responses to reduce legal ambiguity and increase the likelihood of petition approval.</li>
           </ul>
         </div>
 
         <div class="project-box">
             <h3><em>When To Take Your Disney Vacay?</em></h3>
             <ul>
-            <p>
-              "When To Take Your Disney Vacay" is an interactive Tableau dashboard designed to help users determine the optimal time to visit Disney parks. 
-               By combining ride wait times, weather data, and visitor sentiment, the dashboard provides a holistic view of park conditions to enhance planning and overall experience.
-            </p>
-            <li><em>Wait Time Dashboard:</em> Displays hourly ride wait times and a dynamic list of rides with the shortest waits, allowing users to plan their day efficiently.</li>
-            <li><em>Weather Dashboard:</em> Shows hourly temperatures and the chance of rain for selected days, helping visitors choose comfortable and dry periods for their visit.</li>
-            <li><em>Emotion Dashboard:</em> Visualizes visitor sentiment using word clouds from best and worst reviews and emotion-based bar charts, highlighting positive and negative experiences during selected dates.</li>
-            <li><em>Date Range Interaction:</em> Users can select a date range that updates all dashboards simultaneously, providing a synchronized and dynamic planning experience.</li>
-            <a id="openDisneyModal" href="#" class="view-dashboard">
-                <bold><em>Launch Dashboard</em></bold>
-            </a>
-            </ul>
-          </div>
-
-          <div id="disneyModal" class="modal">
-            <div class="modal-content">
-              <span class="close-btn" id="disneyCloseBtn">&times;</span>
-
-            <div class='tableauPlaceholder' id='vizDisney' style='position: relative'>
-              <noscript>
-              <a href='#'>
-              <img alt='Disney Vacation Planner'
-              src='https://public.tableau.com/static/images/Wh/WhenToPlanA_DisneyVacay/WaitTimeDashboard/1_rss.png'
-              style='border: none' />
+              <p>"When To Take Your Disney Vacay" is an interactive Tableau dashboard designed to help users determine the optimal time to visit Disney parks. By combining ride wait times, weather data, and visitor sentiment, the dashboard provides a holistic view of park conditions to enhance planning and overall experience.</p>
+              <li><em>Wait Time Dashboard:</em> Displays hourly ride wait times and a dynamic list of rides with the shortest waits, allowing users to plan their day efficiently.</li>
+              <li><em>Weather Dashboard:</em> Shows hourly temperatures and the chance of rain for selected days, helping visitors choose comfortable and dry periods for their visit.</li>
+              <li><em>Emotion Dashboard:</em> Visualizes visitor sentiment using word clouds from best and worst reviews and emotion-based bar charts, highlighting positive and negative experiences during selected dates.</li>
+              <li><em>Date Range Interaction:</em> Users can select a date range that updates all dashboards simultaneously, providing a synchronized and dynamic planning experience.</li>
+              <a id="openDisneyModal" href="#" class="view-dashboard">
+                <strong><em>Launch Dashboard</em></strong>
               </a>
+            </ul>
+        </div>
+
+        <div id="disneyModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn" id="disneyCloseBtn">&times;</span>
+
+            <div class="tableauPlaceholder" id="vizDisney" style="position: relative">
+              <noscript>
+                <a href="#">
+                  <img alt="Disney Vacation Planner"
+                  src="https://public.tableau.com/static/images/Wh/WhenToPlanA_DisneyVacay/WaitTimeDashboard/1_rss.png"
+                  style="border: none" />
+                </a>
               </noscript>
-              <object class='tableauViz' style='display:none;'>
-              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-              <param name='embed_code_version' value='3' />
-              <param name='site_root' value='' />
-              <param name='name' value='WhenToPlanA_DisneyVacay/WaitTimeDashboard' />
-              <param name='tabs' value='no' />
-              <param name='toolbar' value='yes' />
-              <param name='static_image' value='https://public.tableau.com/static/images/Wh/WhenToPlanA_DisneyVacay/WaitTimeDashboard/1.png' />
-              <param name='animate_transition' value='yes' />
-              <param name='display_static_image' value='yes' />
-              <param name='display_spinner' value='yes' />
-              <param name='display_overlay' value='yes' />
-              <param name='display_count' value='yes' />
-              <param name='language' value='en-GB' />
+              <object class="tableauViz" style="display:none;">
+                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="WhenToPlanA_DisneyVacay/WaitTimeDashboard" />
+                <param name="tabs" value="no" />
+                <param name="toolbar" value="yes" />
+                <param name="static_image" value="https://public.tableau.com/static/images/Wh/WhenToPlanA_DisneyVacay/WaitTimeDashboard/1.png" />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_overlay" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="en-GB" />
               </object>
             </div>
           </div>
@@ -98,47 +93,43 @@
         <div class="project-box">
             <h3><em>NBA Shot Chart Analysis</em></h3>
             <ul>
-                <p>
-                    NBA Shot Chart Analysis is a Tableau visualization that explores shooting trends and player performances in the NBA since 2000.
-                    This project aims to provide fans and analysts with insights into how shooting strategies, player tendencies, and overall gameplay have evolved over the years.
-                </p>
+                <p>NBA Shot Chart Analysis is a Tableau visualization that explores shooting trends and player performances in the NBA since 2000. This project aims to provide fans and analysts with insights into how shooting strategies, player tendencies, and overall gameplay have evolved over the years.</p>
                 <li>Uncovers the evolution of NBA shooting strategies from 2000 to the present.</li>
                 <li>Analyzes player shot trends, tendencies, and the impact of individual styles on team performance.</li>
                 <li>Highlights the effectiveness of 2-pointers vs. 3-pointers and changes in distance-based shooting patterns.</li>
                 <a id="openNBAModal" href="#" class="view-dashboard">
-                  <bold><em>Launch Dashboard</em></bold>
+                  <strong><em>Launch Dashboard</em></strong>
                 </a>
             </ul>
         </div>
 
-            <div id="nbaModal" class="modal">
-              <div class="modal-content">
-              <span class="close-btn" id="nbaCloseBtn">&times;</span>
+        <div id="nbaModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn" id="nbaCloseBtn">&times;</span>
 
-            <div class='tableauPlaceholder' id='vizNBA' style='position: relative'>
-            <noscript>
-            <a href='#'>
-              <img alt='NBA Shot Chart'
-              src='https://public.tableau.com/static/images/CP/CPSC5320_VA3_NBA_Shotchart_Team3/NBAShotChart/1_rss.png'
-              style='border: none' />
-            </a>
-            </noscript>
-            <object class='tableauViz' style='display:none;'>
-            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-            <param name='embed_code_version' value='3' />
-            <param name='site_root' value='' />
-            <param name='name' value='CPSC5320_VA3_NBA_Shotchart_Team3/NBAShotChart' />
-            <param name='tabs' value='no' />
-            <param name='toolbar' value='yes' />
-            <param name='static_image'
-                value='https://public.tableau.com/static/images/CP/CPSC5320_VA3_NBA_Shotchart_Team3/NBAShotChart/1.png' />
-            <param name='animate_transition' value='yes' />
-            <param name='display_static_image' value='yes' />
-            <param name='display_spinner' value='yes' />
-            <param name='display_overlay' value='yes' />
-            <param name='display_count' value='yes' />
-            <param name='language' value='en-GB' />
-            </object>
+            <div class="tableauPlaceholder" id="vizNBA" style="position: relative">
+              <noscript>
+                <a href="#">
+                  <img alt="NBA Shot Chart"
+                  src="https://public.tableau.com/static/images/CP/CPSC5320_VA3_NBA_Shotchart_Team3/NBAShotChart/1_rss.png"
+                  style="border: none" />
+                </a>
+              </noscript>
+              <object class="tableauViz" style="display:none;">
+                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="CPSC5320_VA3_NBA_Shotchart_Team3/NBAShotChart" />
+                <param name="tabs" value="no" />
+                <param name="toolbar" value="yes" />
+                <param name="static_image" value="https://public.tableau.com/static/images/CP/CPSC5320_VA3_NBA_Shotchart_Team3/NBAShotChart/1.png" />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_overlay" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="en-GB" />
+              </object>
             </div>
           </div>
         </div>
@@ -146,7 +137,7 @@
         <div class="project-box">
           <h3><em>Drug Review Analysis</em></h3>
           <ul>
-            <p>This project analyzed thousands of patient-written drug reviews to understand drug effectiveness and patient satisfaction through sentiment analysis. Using NLP, built both regression and classification models—predicting numerical ratings from review texts and classifying sentiment polarity.</p>
+            <p>This project analyzed thousands of patient-written drug reviews to understand drug effectiveness and patient satisfaction through sentiment analysis. Using NLP, it built both regression and classification models, predicting numerical ratings from review texts and classifying sentiment polarity.</p>
             <li>Extracted sentiment scores using NLP techniques to convert textual reviews into quantitative metrics.</li>
             <li>Built a transformer-based model using Hugging Face to predict drug ratings based on review content.</li>
             <li>Uncovered real-world insights into medication effectiveness and side effects.</li>
@@ -156,15 +147,12 @@
         <div class="project-box">
             <h3><em>Kanye West Twitter Analysis</em></h3>
             <ul>
-                <p>
-                  This is a Tableau visualization that examines public conversations surrounding Kanye West on Twitter. 
-                  This project provides insights into where, when, and how audiences engage with his persona, analyzing sentiment, vocabulary, trending topics, and the evolving narrative around his career and public image.
-                </p>
+                <p>This is a Tableau visualization that examines public conversations surrounding Kanye West on Twitter. This project provides insights into where, when, and how audiences engage with his persona, analyzing sentiment, vocabulary, trending topics, and the evolving narrative around his career and public image.</p>
                 <li>Identifies the most discussed times and locations in the USA related to Kanye West.</li>
                 <li>Analyzes the language, sentiment, and patterns in tweets to capture approval, criticism, and audience engagement.</li>
                 <li>Highlights trending topics and key subjects associated with Kanye West across the Twitter landscape.</li>
                 <a id="openKanyeModal" href="#" class="view-dashboard">
-                  <bold><em>Launch Dashboard</em></bold>
+                  <strong><em>Launch Dashboard</em></strong>
                 </a>
             </ul>
         </div>
@@ -173,28 +161,28 @@
           <div class="modal-content">
             <span class="close-btn" id="kanyeCloseBtn">&times;</span>
 
-            <div class='tableauPlaceholder' id='vizKanye' style='position: relative'>
+            <div class="tableauPlaceholder" id="vizKanye" style="position: relative">
               <noscript>
-                <a href='#'>
-                  <img alt='Kanye West Twitter Analysis'
-                  src='https://public.tableau.com/static/images/Tw/TwitteratiReactionAnalysis_KanyeWest_VA7_Team3/TwitteratiReactionAnalysis/1_rss.png'
-                  style='border: none' />
+                <a href="#">
+                  <img alt="Kanye West Twitter Analysis"
+                  src="https://public.tableau.com/static/images/Tw/TwitteratiReactionAnalysis_KanyeWest_VA7_Team3/TwitteratiReactionAnalysis/1_rss.png"
+                  style="border: none" />
                 </a>
               </noscript>
-              <object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='TwitteratiReactionAnalysis_KanyeWest_VA7_Team3/TwitteratiReactionAnalysis' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https://public.tableau.com/static/images/Tw/TwitteratiReactionAnalysis_KanyeWest_VA7_Team3/TwitteratiReactionAnalysis/1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='en-GB' />
+              <object class="tableauViz" style="display:none;">
+                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="TwitteratiReactionAnalysis_KanyeWest_VA7_Team3/TwitteratiReactionAnalysis" />
+                <param name="tabs" value="no" />
+                <param name="toolbar" value="yes" />
+                <param name="static_image" value="https://public.tableau.com/static/images/Tw/TwitteratiReactionAnalysis_KanyeWest_VA7_Team3/TwitteratiReactionAnalysis/1.png" />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_overlay" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="en-GB" />
               </object>
             </div>
           </div>
@@ -228,11 +216,11 @@
                 <li>Implemented unit testing across all components with 100% code coverage.</li>
             </ul>
         </div>
-        
+
         <div class="project-box">
             <h3><em>Driver Drowsiness Detection</em></h3>
             <ul>
-                <p>Driver Drowsiness Detection is a Python-based computer vision system designed to reduce road accidents caused by driver fatigue. It monitors the driver’s eye movements in real time and triggers alerts when signs of drowsiness are detected, aiming to enhance safety for individuals driving long distances.</p>
+                <p>Driver Drowsiness Detection is a Python-based computer vision system designed to reduce road accidents caused by driver fatigue. It monitors the driver's eye movements in real time and triggers alerts when signs of drowsiness are detected, aiming to enhance safety for individuals driving long distances.</p>
                 <li>Built using Python, OpenCV, Dlib, and Keras for real-time facial and eye landmark detection.</li>
                 <li>Detected eye closure and yawning using Eye Aspect Ratio (EAR) and facial cues to determine fatigue levels.</li>
                 <li>Issued instant audio alerts to wake the driver when drowsiness was detected.</li>
@@ -266,49 +254,42 @@
                 <li>Created a user interface for staff to access and update reservation information.</li>
             </ul>
         </div>
-        
+    </div>
+
+    <div class="fixed-sidebar">
+      <div class="sidebar-bar"></div>
+      <a href="#" class="sidebar-icon" id="contactBtn" title="Contact Me">&#128222;</a>
+      <a href="#" class="sidebar-icon" id="resumeBtn" title="View Resume">&#128196;</a>
+      <div class="sidebar-bar"></div>
+    </div>
+
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeContactBtn">&times;</span>
+        <h2>Message the Dev Boss!</h2>
+        <h1>&#128126;</h1>
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="your gamer-tag/name would do!" required>
+          <input type="email" name="email" placeholder="your email for the return transmission!" required>
+          <textarea name="message" rows="5" placeholder="bug? praise? secret code? drop it here!" required></textarea>
+          <button type="submit">launch</button>
+        </form>
       </div>
-      
-  <!-- Sticky Sidebar - Resume/Contact -->
-  <div class="fixed-sidebar">
-    <div class="sidebar-bar"></div>
-    <a href="#" class="sidebar-icon" id="contactBtn" title="Contact Me">📞</a>
-    <a href="#" class="sidebar-icon" id="resumeBtn" title="View Resume">📃</a>
-    <div class="sidebar-bar"></div>
-  </div>
-
-  <!-- Contact Modal -->
-  <div id="contactModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeContactBtn">&times;</span>
-      <h2>Message the Dev Boss!</h2>
-      <h1>👾</h1>
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="your gamer-tag/name would do!" required>
-        <input type="email" name="email" placeholder="your email for the return transmission!" required>
-        <textarea name="message" rows="5" placeholder="bug? praise? secret code? drop it here!" required></textarea>
-        <button type="submit">launch</button>
-      </form>
     </div>
-  </div>
 
-  <!-- Resume Modal -->
-  <div id="resumeModal" class="modal">
-    <div class="modal-content">
-  <span class="close-btn" id="resumeCloseBtn">&times;</span>
-  <iframe src="assets/resume_RTPN.pdf" frameborder="0" class="resume-frame"></iframe>
+    <div id="resumeModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="resumeCloseBtn">&times;</span>
+        <iframe src="assets/rtpn_Resume.pdf" frameborder="0" class="resume-frame"></iframe>
+      </div>
     </div>
-  </div>
 
-  <!-- Toast Message -->
-  <div id="like-toast" class="toast-message"></div>
+    <div id="like-toast" class="toast-message"></div>
 
-<!-- Footer -->
-<footer class="footer">
-  <p>Copyright &copy; 2025 - Ravi Tarun N</p>
-</footer> 
+    <footer class="footer">
+      <p>Copyright &copy; 2025 - Ravi Tarun N</p>
+    </footer>
 
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
-
 </html>

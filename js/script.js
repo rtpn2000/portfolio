@@ -1,55 +1,49 @@
 // script.js
 
-// Handling the 'Home' Page.
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize falling stars
   createStars();
-  // Initially hide the game cards container
+
   const cardContainer = document.getElementById("cardcontainer");
   const quest = document.getElementById("quest");
+
   if (cardContainer) cardContainer.style.display = "none";
   if (quest) quest.style.display = "none";
-  // Start typing effect for title and then intro
+
   typeTitle();
   setTimeout(typeIntro, 2500);
-  setTimeout(showCards, 4500); // Displays the game cards after the title has appeared.
+  setTimeout(showCards, 4500);
 });
 
-// Typing effect for the title.
 const titleText = "Hi, This is Ravi Tarun Prasad Nimmalapudi.";
 let i = 0;
+
 function typeTitle() {
   const titleElement = document.getElementById("title");
-  if (titleElement) {
-      if (i <titleText.length) {
-          titleElement.innerHTML += titleText.charAt(i);
-          i++;
-          setTimeout(typeTitle, 65);
-      }
+  if (titleElement && i < titleText.length) {
+    titleElement.innerHTML += titleText.charAt(i);
+    i++;
+    setTimeout(typeTitle, 65);
   }
 }
 
-// Typing effect for intro text
 const introText = "Welcome to my portfolio!";
 let j = 0;
+
 function typeIntro() {
   const introElement = document.getElementById("intro");
-  if (introElement) {
-      if (j < introText.length) {
-          introElement.innerHTML += introText.charAt(j);
-          j++;
-          setTimeout(typeIntro, 70);
-      }
+  if (introElement && j < introText.length) {
+    introElement.innerHTML += introText.charAt(j);
+    j++;
+    setTimeout(typeIntro, 70);
   }
 }
 
-// Game cards section title.
 const questText = "Select a quest to begin!";
 
-// Displays game cards.
 function showCards() {
   const cardsContainer = document.getElementById("cardcontainer");
   const quest = document.getElementById("quest");
+
   if (cardsContainer) cardsContainer.style.display = "flex";
   if (quest) {
     quest.innerHTML = questText;
@@ -57,91 +51,98 @@ function showCards() {
   }
 }
 
-// On-click functionality.
 function navigateTo(page) {
   window.location.href = page;
 }
 
-// Function to generate falling stars dynamically
 function createStars(numStars = 100) {
   const background = document.querySelector(".background");
-  for (let i = 0; i < numStars; i++) {
-      let star = document.createElement("div");
-      star.classList.add("star");
-      // Random Position & Animation
-      let x = Math.random() * window.innerWidth;
-      let y = Math.random() * window.innerHeight;
-      let duration = Math.random() * 5 + 3;
-      star.style.left = `${x}px`;
-      star.style.top = `${y}px`;
-      star.style.animation = `moveStars ${duration}s linear infinite`;
-      background.appendChild(star);
-      setTimeout(() => {
-          star.remove();
-          createStars(1);
-      }, duration * 1000);
+  if (!background) return;
+
+  for (let index = 0; index < numStars; index++) {
+    const star = document.createElement("div");
+    star.classList.add("star");
+
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    const duration = Math.random() * 5 + 3;
+
+    star.style.left = `${x}px`;
+    star.style.top = `${y}px`;
+    star.style.animation = `moveStars ${duration}s linear infinite`;
+    background.appendChild(star);
+
+    setTimeout(() => {
+      star.remove();
+      createStars(1);
+    }, duration * 1000);
   }
 }
 
-// Handling 'Modals'-1.
 function openModal(id) {
-  document.getElementById(id).style.display = 'flex';
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.style.display = "flex";
+  }
 }
 
-// Handling 'Modals'-2.
 function closeModal(id) {
-  document.getElementById(id).style.display = 'none';
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.style.display = "none";
+  }
 }
 
-// Closes modal if clicking outside the modal content.
-window.onclick = function(event) {
+window.onclick = function (event) {
   const modals = document.querySelectorAll(".modal");
-  modals.forEach(modal => {
+  modals.forEach((modal) => {
     if (event.target === modal) {
       modal.style.display = "none";
     }
   });
 };
 
-// Handling 'Resume' Modal.
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('resumeModal');
-  const btn = document.getElementById('resumeBtn');
-  const closeBtn = document.getElementById('resumeCloseBtn');
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("resumeModal");
+  const btn = document.getElementById("resumeBtn");
+  const closeBtn = document.getElementById("resumeCloseBtn");
 
-  btn.addEventListener('click', (e) => {
+  if (!modal || !btn || !closeBtn) {
+    return;
+  }
+
+  btn.addEventListener("click", (e) => {
     e.preventDefault();
-    modal.style.display = 'flex';
+    modal.style.display = "flex";
   });
 
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
   });
 
-  window.addEventListener('click', (e) => {
+  window.addEventListener("click", (e) => {
     if (e.target === modal) {
-      modal.style.display = 'none';
+      modal.style.display = "none";
     }
   });
 });
 
-// Matches nav‑link and add .active - Glows current page.
-document.addEventListener('DOMContentLoaded', () => {
-  const path = window.location.pathname.split('/').pop();
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    if (a.getAttribute('href') === path) {
-      a.classList.add('active');
+document.addEventListener("DOMContentLoaded", () => {
+  const path = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".nav-links a").forEach((a) => {
+    if (a.getAttribute("href") === path) {
+      a.classList.add("active");
     }
   });
 });
 
-// Handling 'Contact Me' Modal.
 const contactBtn = document.getElementById("contactBtn");
 const contactModal = document.getElementById("contactModal");
 const closeContactBtn = document.getElementById("closeContactBtn");
 
 if (contactBtn && contactModal && closeContactBtn) {
-  contactBtn.addEventListener("click", () => {
+  contactBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     contactModal.style.display = "flex";
   });
 
@@ -156,19 +157,17 @@ if (contactBtn && contactModal && closeContactBtn) {
   });
 }
 
-// Handling the 'Tableau Visualizations' Modal.
-// NBA Shot Chart Modal.
 const nbaModal = document.getElementById("nbaModal");
 const openNBAModal = document.getElementById("openNBAModal");
 const nbaCloseBtn = document.getElementById("nbaCloseBtn");
 
 if (nbaModal && openNBAModal && nbaCloseBtn) {
-  // Refreshing the viz.
   openNBAModal.addEventListener("click", (e) => {
     e.preventDefault();
     nbaModal.style.display = "block";
     const divElement = document.getElementById("vizNBA");
     if (!divElement) return;
+
     divElement.innerHTML = `<object class='tableauViz' style='display:none;'>
     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
     <param name='embed_code_version' value='3' />
@@ -198,9 +197,14 @@ if (nbaModal && openNBAModal && nbaCloseBtn) {
     }
   });
 }
+
 function loadTableauViz() {
   const divElement = document.getElementById("vizNBA");
+  if (!divElement) return;
+
   const vizElement = divElement.getElementsByTagName("object")[0];
+  if (!vizElement) return;
+
   const width = divElement.offsetWidth || window.innerWidth;
   const preferredHeight = Math.round(width * 0.75);
   const minHeight = window.innerWidth <= 480 ? 320 : 420;
@@ -214,18 +218,17 @@ function loadTableauViz() {
   vizElement.parentNode.insertBefore(scriptElement, vizElement);
 }
 
-// Kanye West Twitter Analysis Modal.
 const kanyeModal = document.getElementById("kanyeModal");
 const openKanyeModal = document.getElementById("openKanyeModal");
 const kanyeCloseBtn = document.getElementById("kanyeCloseBtn");
 
 if (kanyeModal && openKanyeModal && kanyeCloseBtn) {
-  // Refreshing the viz.
   openKanyeModal.addEventListener("click", (e) => {
     e.preventDefault();
     kanyeModal.style.display = "block";
     const divElement = document.getElementById("vizKanye");
     if (!divElement) return;
+
     divElement.innerHTML = `<object class='tableauViz' style='display:none;'>
     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
     <param name='embed_code_version' value='3' />
@@ -241,20 +244,28 @@ if (kanyeModal && openKanyeModal && kanyeCloseBtn) {
     <param name='display_count' value='yes' />
     <param name='language' value='en-GB' />
   </object>`;
+
     setTimeout(loadKanyeViz, 300);
   });
+
   kanyeCloseBtn.addEventListener("click", () => {
     kanyeModal.style.display = "none";
   });
+
   window.addEventListener("click", (event) => {
     if (event.target === kanyeModal) {
       kanyeModal.style.display = "none";
     }
   });
 }
+
 function loadKanyeViz() {
   const divElement = document.getElementById("vizKanye");
+  if (!divElement) return;
+
   const vizElement = divElement.getElementsByTagName("object")[0];
+  if (!vizElement) return;
+
   const width = divElement.offsetWidth || window.innerWidth;
   const preferredHeight = Math.round(width * 0.75);
   const minHeight = window.innerWidth <= 480 ? 320 : 420;
@@ -268,18 +279,17 @@ function loadKanyeViz() {
   vizElement.parentNode.insertBefore(scriptElement, vizElement);
 }
 
-// Disney Vacay Modal.
 const disneyModal = document.getElementById("disneyModal");
 const openDisneyModal = document.getElementById("openDisneyModal");
 const disneyCloseBtn = document.getElementById("disneyCloseBtn");
 
 if (disneyModal && openDisneyModal && disneyCloseBtn) {
-  // Refreshing the viz.
   openDisneyModal.addEventListener("click", (e) => {
     e.preventDefault();
     disneyModal.style.display = "block";
     const divElement = document.getElementById("vizDisney");
     if (!divElement) return;
+
     divElement.innerHTML = `<object class='tableauViz' style='display:none;'>
     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
     <param name='embed_code_version' value='3' />
@@ -295,8 +305,10 @@ if (disneyModal && openDisneyModal && disneyCloseBtn) {
     <param name='display_count' value='yes' />
     <param name='language' value='en-GB' />
   </object>`;
+
     setTimeout(loadDisneyViz, 300);
   });
+
   disneyCloseBtn.addEventListener("click", () => {
     disneyModal.style.display = "none";
   });
@@ -310,7 +322,11 @@ if (disneyModal && openDisneyModal && disneyCloseBtn) {
 
 function loadDisneyViz() {
   const divElement = document.getElementById("vizDisney");
+  if (!divElement) return;
+
   const vizElement = divElement.getElementsByTagName("object")[0];
+  if (!vizElement) return;
+
   const width = divElement.offsetWidth || window.innerWidth;
   const preferredHeight = Math.round(width * 0.75);
   const minHeight = window.innerWidth <= 480 ? 320 : 420;
@@ -324,20 +340,19 @@ function loadDisneyViz() {
   vizElement.parentNode.insertBefore(scriptElement, vizElement);
 }
 
-// Incrementing 'Like Counter'.
 document.addEventListener("DOMContentLoaded", function () {
   const likeBtn = document.getElementById("likeBtn");
   const likeCount = document.getElementById("likeCount");
   if (!likeBtn || !likeCount) return;
 
-  // Retrieve like state from localStorage
-  let count = parseInt(localStorage.getItem("likeCount")) || 0;
+  let count = parseInt(localStorage.getItem("likeCount"), 10) || 0;
   let liked = localStorage.getItem("liked") === "true";
   likeCount.textContent = count;
 
   if (liked) {
     likeBtn.classList.add("liked");
   }
+
   likeBtn.addEventListener("click", function () {
     const wasLiked = likeBtn.classList.contains("liked");
 
@@ -350,7 +365,7 @@ document.addEventListener("DOMContentLoaded", function () {
       count += 1;
       likeBtn.classList.add("liked");
       localStorage.setItem("liked", "true");
-      showToast('Another fan joined the cult!');
+      showToast("Another fan joined the cult!");
     }
 
     likeCount.textContent = count;
@@ -360,6 +375,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function showToast(message) {
   const toast = document.getElementById("like-toast");
+  if (!toast) return;
+
   toast.textContent = message;
   toast.classList.add("show");
   setTimeout(() => {

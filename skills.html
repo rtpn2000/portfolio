@@ -5,13 +5,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🔰 Skills</title>
+    <title>Skills</title>
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   </head>
   <body>
 
-    <!-- Animated Background -->
     <div class="background"></div>
 
     <div class="navbar">
@@ -23,101 +22,94 @@
           <li><a href="projects.html">Projects</a></li>
           <li><a href="skills.html">Skills</a></li>
       </ul>
-  </div>
+    </div>
 
-  <div class="skills-section">
+    <div class="skills-section">
+      <div class="skill-category">
+        <div class="skill-title">Interested Domains</div>
+        <div class="card-container">
+          <div class="skill-card"><p><em><strong>Machine Learning</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>Data Science</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>Artificial Intelligence</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>Computer Vision</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>Deep Learning</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>Big Data</strong></em></p></div>
+        </div>
+      </div>
 
-    <div class="skill-category">
-      <div class="skill-title">Interested Domains</div>
-      <div class="card-container">
-        <div class="skill-card"><p><em><strong>Machine Learning</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>Data Science</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>Artifical Intelligence</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>Computer Vision</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>Deep Learning</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>Big Data</strong></em></p></div>
+      <div class="skill-category">
+        <div class="skill-title">Databases</div>
+        <div class="card-container">
+          <div class="skill-card"><p><em><strong>SQL</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>PostgreSQL</strong></em></p></div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-title">Platforms</div>
+        <div class="card-container">
+          <div class="skill-card"><p><em><strong>Git</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>VS Code</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>Docker</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>Postman</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>Tableau</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>AWS</strong></em></p></div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-title">Tools</div>
+        <div class="card-container">
+          <div class="skill-card"><p><em><strong>MF OO</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>MF RPA</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>MF IDOL</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>Flask</strong></em></p></div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-title">Programming Languages</div>
+        <div class="card-container">
+          <div class="skill-card"><p><em><strong>C</strong></em></p></div>
+          <div class="skill-card"><p><em><strong>Python</strong></em></p></div>
+        </div>
       </div>
     </div>
 
-    <div class="skill-category">
-      <div class="skill-title">Databases</div>
-      <div class="card-container">
-        <div class="skill-card"><p><em><strong>SQL</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>PostgreSQL</strong></em></p></div>
+    <div class="fixed-sidebar">
+      <div class="sidebar-bar"></div>
+      <a href="#" class="sidebar-icon" id="contactBtn" title="Contact Me">&#128222;</a>
+      <a href="#" class="sidebar-icon" id="resumeBtn" title="View Resume">&#128196;</a>
+      <div class="sidebar-bar"></div>
+    </div>
+
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeContactBtn">&times;</span>
+        <h2>Message the Dev Boss!</h2>
+        <h1>&#128126;</h1>
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="your gamer-tag/name would do!" required>
+          <input type="email" name="email" placeholder="your email for the return transmission!" required>
+          <textarea name="message" rows="5" placeholder="bug? praise? secret code? drop it here!" required></textarea>
+          <button type="submit">launch</button>
+        </form>
       </div>
     </div>
 
-    <div class="skill-category">
-      <div class="skill-title">Platforms</div>
-      <div class="card-container">
-        <div class="skill-card"><p><em><strong>Git</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>VS Code</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>Docker</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>Postman</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>Tableau</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>AWS</strong></em></p></div>
+    <div id="resumeModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="resumeCloseBtn">&times;</span>
+        <iframe src="assets/rtpn_Resume.pdf" frameborder="0" class="resume-frame"></iframe>
       </div>
     </div>
 
-    <div class="skill-category">
-      <div class="skill-title">Tools</div>
-      <div class="card-container">
-        <div class="skill-card"><p><em><strong>MF OO</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>MF RPA</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>MF IDOL</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>Flask</strong></em></p></div>
-      </div>
-    </div>
+    <div id="like-toast" class="toast-message"></div>
 
-    <div class="skill-category">
-      <div class="skill-title">Programming Languages</div>
-      <div class="card-container">
-        <div class="skill-card"><p><em><strong>C</strong></em></p></div>
-        <div class="skill-card"><p><em><strong>Python</strong></em></p></div>
-    </div>
+    <footer class="footer">
+      <p>Copyright &copy; 2025 - Ravi Tarun N</p>
+    </footer>
 
-  </div>
-
-  <!-- Sticky Sidebar - Resume/Contact -->
-  <div class="fixed-sidebar">
-    <div class="sidebar-bar"></div>
-    <a href="#" class="sidebar-icon" id="contactBtn" title="Contact Me">📞</a>
-    <a href="#" class="sidebar-icon" id="resumeBtn" title="View Resume">📃</a>
-    <div class="sidebar-bar"></div>
-  </div>
-
-  <!-- Contact Modal -->
-  <div id="contactModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeContactBtn">&times;</span>
-      <h2>Message the Dev Boss!</h2>
-      <h1>👾</h1>
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="your gamer-tag/name would do!" required>
-        <input type="email" name="email" placeholder="your email for the return transmission!" required>
-        <textarea name="message" rows="5" placeholder="bug? praise? secret code? drop it here!" required></textarea>
-        <button type="submit">launch</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Resume Modal -->
-  <div id="resumeModal" class="modal">
-    <div class="modal-content">
-  <span class="close-btn" id="resumeCloseBtn">&times;</span>
-  <iframe src="assets/rtpn_Resume.pdf" frameborder="0" class="resume-frame"></iframe>
-    </div>
-  </div>
-
-  <!-- Toast Message -->
-  <div id="like-toast" class="toast-message"></div>
-
-<!-- Footer -->
-<footer class="footer">
-  <p>Copyright &copy; 2025 - Ravi Tarun N</p>
-</footer> 
-
-  <script src="js/script.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>

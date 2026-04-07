@@ -5,13 +5,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🔰 About</title>
+    <title>About</title>
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   </head>
   <body>
-    
-    <!-- Animated Background -->
     <div class="background"></div>
 
     <div class="navbar">
@@ -26,12 +24,9 @@
     </div>
 
     <div class="main-container">
-
       <section class="category-section">
         <h2 class="section-header">Player Stats</h2>
         <div class="player-stats-container">
-
-          <!-- Stats Box -->
           <div class="stats-box">
             <div class="stat-line"><span>Name:</span><em><strong>Ravi Tarun N</strong></em></div>
             <div class="stat-line"><span>Level:</span><em><strong>24</strong></em></div>
@@ -39,10 +34,10 @@
             <div class="stat-line"><span>Missions Completed:</span><em><strong>20+</strong></em></div>
             <div class="stat-line"><span>Special Abilities:</span>
               <ul class="special-abilities">
-                <li><em><strong>⚙️ Auto Forger</strong></em></li>
-                <li><em><strong>⚡ Pattern Hunter</strong></em></li>
-                <li><em><strong>🌀 Hyper Adapter</strong></em></li>
-                <li><em><strong>🔍 Data Whisperer</strong></em></li>
+                <li><em><strong>Auto Forger</strong></em></li>
+                <li><em><strong>Pattern Hunter</strong></em></li>
+                <li><em><strong>Hyper Adapter</strong></em></li>
+                <li><em><strong>Data Whisperer</strong></em></li>
               </ul>
             </div>
             <div class="stat-line">
@@ -51,20 +46,17 @@
             </div>
           </div>
 
-          <!-- Picture -->
           <div class="avatar-box">
             <img src="assets/prof_pic.png" alt="Neon Avatar" />
 
             <div class="like-section">
-              <button class="neon-heart" id="likeBtn">♡</button>
+              <button class="neon-heart" id="likeBtn">&#9825;</button>
               <span id="likeCount">0</span>
             </div>
-
-        </div>
+          </div>
         </div>
       </section>
 
-      <!-- Languages -->
       <section class="languages-section category-section">
         <h2 class="section-header">Languages Unlocked</h2>
         <div class="card-container">
@@ -75,33 +67,29 @@
         </div>
       </section>
 
-      <!-- Hobbies -->
       <section class="hobbies-section category-section">
         <h2 class="section-header">Side Quests</h2>
         <div class="card-container">
           <div class="skill-card"><em><strong>Explorer Mode</strong></em></div>
-          <div class="skill-card"><em><strong>Causal Gamer</strong></em></div>
-          <div class="skill-card"><em><strong>Automating & Chilling</strong></em></div>
+          <div class="skill-card"><em><strong>Casual Gamer</strong></em></div>
+          <div class="skill-card"><em><strong>Automating &amp; Chilling</strong></em></div>
           <div class="skill-card"><em><strong>Movie Mode</strong></em></div>
         </div>
       </section>
-
     </div>
 
-    <!-- Sticky Sidebar - Resume/Contact -->
     <div class="fixed-sidebar">
       <div class="sidebar-bar"></div>
-      <a href="#" class="sidebar-icon" id="contactBtn" title="Contact Me">📞</a>
-      <a href="#" class="sidebar-icon" id="resumeBtn" title="View Resume">📃</a>
+      <a href="#" class="sidebar-icon" id="contactBtn" title="Contact Me">&#128222;</a>
+      <a href="#" class="sidebar-icon" id="resumeBtn" title="View Resume">&#128196;</a>
       <div class="sidebar-bar"></div>
     </div>
 
-    <!-- Contact Modal -->
     <div id="contactModal" class="modal">
       <div class="modal-content">
         <span class="close-btn" id="closeContactBtn">&times;</span>
         <h2>Message the Dev Boss!</h2>
-        <h1>👾</h1>
+        <h1>&#128126;</h1>
         <form id="contactForm">
           <input type="text" name="name" placeholder="your gamer-tag/name would do!" required>
           <input type="email" name="email" placeholder="your email for the return transmission!" required>
@@ -111,23 +99,19 @@
       </div>
     </div>
 
-    <!-- Resume Modal -->
     <div id="resumeModal" class="modal">
       <div class="modal-content">
-    <span class="close-btn" id="resumeCloseBtn">&times;</span>
-    <iframe src="assets/rtpn_Resume.pdf" frameborder="0" class="resume-frame"></iframe>
+        <span class="close-btn" id="resumeCloseBtn">&times;</span>
+        <iframe src="assets/rtpn_Resume.pdf" frameborder="0" class="resume-frame"></iframe>
       </div>
     </div>
 
-    <!-- Toast Message -->
     <div id="like-toast" class="toast-message"></div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>Copyright &copy; 2025 - Ravi Tarun N</p>
-  </footer> 
+    <footer class="footer">
+      <p>Copyright &copy; 2025 - Ravi Tarun N</p>
+    </footer>
 
     <script src="js/script.js"></script>
   </body>
-
 </html>
