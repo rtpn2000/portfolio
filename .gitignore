@@ -1,0 +1,6 @@
+backend/.env
+backend/chatbot-env/
+__pycache__/
+*.py[cod]
+backend/uvicorn.out
+backend/uvicorn.err

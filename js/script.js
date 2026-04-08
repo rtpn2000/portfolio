@@ -2,6 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   createStars();
+  createChatbotWidget();
 
   const cardContainer = document.getElementById("cardcontainer");
   const quest = document.getElementById("quest");
@@ -382,4 +383,153 @@ function showToast(message) {
   setTimeout(() => {
     toast.classList.remove("show");
   }, 2000);
+}
+
+const CHATBOT_API_BASE =
+  window.PORTFOLIO_CHAT_API ||
+  (window.location.protocol === "file:" ? "http://127.0.0.1:8000" : "http://127.0.0.1:8000");
+
+function createChatbotWidget() {
+  if (document.getElementById("chatbot-widget")) return;
+
+  const widget = document.createElement("section");
+  widget.id = "chatbot-widget";
+  widget.className = "chatbot-widget";
+  widget.innerHTML = `
+    <button id="chatbot-toggle" class="chatbot-toggle" type="button" aria-expanded="false">
+      <span class="chatbot-toggle-icon">></span>
+      <span class="chatbot-toggle-text">CIPHER System</span>
+      <span class="chatbot-toggle-ping"></span>
+    </button>
+    <div id="chatbot-panel" class="chatbot-panel" hidden>
+      <div class="chatbot-header">
+        <div class="chatbot-header-copy">
+          <h3>CIPHER System</h3>
+          <p>Ask away.</p>
+        </div>
+        <button id="chatbot-close" class="chatbot-close" type="button" aria-label="Close chatbot">x</button>
+      </div>
+      <div class="chatbot-quick-prompts">
+        <button type="button" class="chatbot-chip" data-question="Who is this person?">Who</button>
+        <button type="button" class="chatbot-chip" data-question="How old is this person?">Age</button>
+        <button type="button" class="chatbot-chip" data-question="Where does this person stay?">Where</button>
+      </div>
+      <div id="chatbot-messages" class="chatbot-messages">
+        <div class="chatbot-message chatbot-message-bot">
+          CIPHER has all the answers locked and loaded. Fire your question and watch the terminal spill secrets.
+        </div>
+      </div>
+      <form id="chatbot-form" class="chatbot-form">
+        <label class="sr-only" for="chatbot-input">Ask the portfolio chatbot</label>
+        <textarea id="chatbot-input" rows="3" placeholder="Enter query..." required></textarea>
+        <div class="chatbot-actions">
+          <button id="chatbot-send" type="submit">Execute</button>
+        </div>
+      </form>
+    </div>
+  `;
+
+  document.body.appendChild(widget);
+
+  const toggleBtn = document.getElementById("chatbot-toggle");
+  const closeBtn = document.getElementById("chatbot-close");
+  const panel = document.getElementById("chatbot-panel");
+  const form = document.getElementById("chatbot-form");
+  const input = document.getElementById("chatbot-input");
+  const messages = document.getElementById("chatbot-messages");
+  const sendBtn = document.getElementById("chatbot-send");
+  const chips = widget.querySelectorAll(".chatbot-chip");
+
+  const openPanel = () => {
+    panel.hidden = false;
+    toggleBtn.setAttribute("aria-expanded", "true");
+    input.focus();
+  };
+
+  const closePanel = () => {
+    panel.hidden = true;
+    toggleBtn.setAttribute("aria-expanded", "false");
+  };
+
+  toggleBtn.addEventListener("click", () => {
+    if (panel.hidden) {
+      openPanel();
+    } else {
+      closePanel();
+    }
+  });
+
+  closeBtn.addEventListener("click", closePanel);
+
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      input.value = chip.dataset.question || "";
+      openPanel();
+      form.requestSubmit();
+    });
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+
+    appendChatMessage(messages, question, "user");
+    input.value = "";
+    sendBtn.disabled = true;
+    appendChatMessage(messages, "Thinking...", "bot", true);
+
+    try {
+      const response = await fetch(`${CHATBOT_API_BASE}/chat`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ question }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      const data = await response.json();
+      replacePendingMessage(messages, data.answer || "I could not find an answer.");
+    } catch (error) {
+      replacePendingMessage(
+        messages,
+        "The chatbot could not connect right now. Make sure the backend is running on port 8000."
+      );
+      console.error(error);
+    } finally {
+      sendBtn.disabled = false;
+      messages.scrollTop = messages.scrollHeight;
+    }
+  });
+}
+
+function appendChatMessage(container, text, role, isPending = false) {
+  const message = document.createElement("div");
+  message.className = `chatbot-message chatbot-message-${role}`;
+  if (isPending) {
+    message.dataset.pending = "true";
+    message.innerHTML = `
+      <span class="chatbot-typing">
+        <span></span><span></span><span></span>
+      </span>
+    `;
+  } else {
+    message.textContent = text;
+  }
+  container.appendChild(message);
+  container.scrollTop = container.scrollHeight;
+}
+
+function replacePendingMessage(container, text) {
+  const pending = container.querySelector("[data-pending='true']");
+  if (pending) {
+    pending.textContent = text;
+    pending.removeAttribute("data-pending");
+  } else {
+    appendChatMessage(container, text, "bot");
+  }
 }

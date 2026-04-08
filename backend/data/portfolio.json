@@ -1,0 +1,185 @@
+{
+  
+  "name": "Ravi Tarun Prasad Nimmalapudi",
+
+  "headline": "Software Engineer specializing in backend systems, data engineering, and machine learning",
+
+  "summary": "I am a software engineer with experience in backend development, data engineering, and applied machine learning. I have worked on building scalable systems, automating complex workflows, and developing data-driven solutions that solve real-world problems. My work combines strong engineering fundamentals with a focus on efficiency, scalability, and practical impact.",
+
+  "about": "I am a software engineer specializing in backend systems, data engineering, and machine learning. I enjoy designing scalable architectures, building efficient data pipelines, and developing intelligent systems that solve real-world problems. My experience includes working with distributed systems, automation tools, and machine learning models across multiple projects and professional roles. I am particularly interested in leveraging data and backend engineering to create impactful and reliable software solutions.",
+
+  "education": [
+    {
+      "institution": "Seattle University",
+      "degree": "Master of Science in Computer Science",
+      "specialization": "Data Science",
+      "gpa": "3.63/4.00",
+      "timeline": "2023 - 2025",
+      "relevant_courses": [
+        "Machine Learning",
+        "Distributed Systems",
+        "Big Data",
+        "Artificial Intelligence",
+        "Parallel Computing",
+        "Visual Analytics"
+      ]
+    },
+    {
+      "institution": "GITAM University",
+      "degree": "Bachelor of Technology in Computer Science",
+      "gpa": "8.33/10",
+      "timeline": "2017 - 2021",
+      "relevant_courses": [
+        "Data Structures",
+        "Operating Systems",
+        "Database Management Systems",
+        "Computer Networks",
+        "Software Engineering"
+      ]
+    }
+  ],
+
+  "skills": {
+    "programming_languages": ["Python", "C", "SQL"],
+    "data_engineering": [
+      "Apache Spark",
+      "Data Pipelines",
+      "Data Cleaning",
+      "Feature Engineering"
+    ],
+    "machine_learning": [
+      "Scikit-Learn",
+      "TensorFlow",
+      "PyTorch",
+      "OpenCV",
+      "Deep Learning",
+      "Computer Vision"
+    ],
+    "backend_and_tools": [
+      "Flask",
+      "REST APIs",
+      "Git",
+      "Docker",
+      "Postman"
+    ],
+    "databases": ["MySQL", "PostgreSQL"],
+    "platforms": ["AWS", "Tableau"],
+    "automation_tools": [
+      "MF RPA",
+      "MF IDOL",
+      "MF Operations Orchestration"
+    ],
+    "domains_of_interest": [
+      "Machine Learning",
+      "Data Science",
+      "Artificial Intelligence",
+      "Big Data"
+    ]
+  },
+
+  "experience": [
+    {
+      "role": "Graduate Teaching Assistant",
+      "company": "Seattle University",
+      "timeline": "Sep 2024 - Jan 2025",
+      "responsibilities": [
+        "Assisted in teaching Computer Graphics to 25+ students",
+        "Explained concepts like projection, texture mapping, and rendering pipelines",
+        "Conducted office hours and one-on-one mentoring"
+      ],
+      "impact": "Improved overall class performance by approximately 15 percent through structured guidance and support"
+    },
+    {
+      "role": "Technology Consultant",
+      "company": "Micro Focus",
+      "timeline": "June 2022 - Dec 2022",
+      "responsibilities": [
+        "Developed end-to-end RPA workflows for insurance automation",
+        "Simulated manual data entry processes to generate insurance quotes",
+        "Worked with MF RPA and Operations Orchestration"
+      ],
+      "impact": "Reduced processing time by 75 percent and doubled daily processing capacity"
+    },
+    {
+      "role": "Technology Consultant",
+      "company": "Micro Focus",
+      "timeline": "Jan 2022 - June 2022",
+      "responsibilities": [
+        "Built automation solutions for banking use cases",
+        "Developed sub-automation workflows",
+        "Performed testing and validation of automation systems"
+      ],
+      "impact": "Improved efficiency and reliability of banking automation workflows"
+    },
+    {
+      "role": "Machine Learning Intern",
+      "company": "Indian Servers",
+      "timeline": "May 2020 - Aug 2020",
+      "responsibilities": [
+        "Built a traffic sign recognition system using machine learning",
+        "Performed data preprocessing and feature engineering",
+        "Trained and evaluated classification models"
+      ],
+      "impact": "Improved model accuracy and contributed to real-time prediction capabilities"
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "DVPO StaG",
+      "problem": "Domestic violence survivors face difficulty navigating legal processes and filing protection orders",
+      "solution": "Built a chatbot system using LLaMA with RAG to guide users through structured legal interviews",
+      "tech": ["LLaMA 3.1", "RAG", "FAISS", "NLP"],
+      "impact": "Increased statement acceptance rate by 25 percent and reduced manual review effort",
+      "details": "Designed a multilingual, trauma-informed system that generates legally accurate survivor statements using context-aware retrieval"
+    },
+    {
+      "name": "Customer Segmentation",
+      "problem": "Retail businesses lack clear segmentation for targeted marketing",
+      "solution": "Applied RFM modeling and clustering algorithms to segment customers",
+      "tech": ["Python", "K-Means", "Seaborn", "Plotly"],
+      "impact": "Enabled data-driven marketing strategies and improved customer retention",
+      "details": "Processed large transactional datasets and visualized actionable insights"
+    },
+    {
+      "name": "Disney Vacation Planner Dashboard",
+      "problem": "Users struggle to identify optimal times to visit theme parks",
+      "solution": "Built an interactive Tableau dashboard combining wait times, weather, and sentiment",
+      "tech": ["Tableau", "Data Visualization"],
+      "impact": "Improved decision-making for travel planning",
+      "details": "Integrated multiple data sources and enabled dynamic filtering for personalized insights"
+    },
+    {
+      "name": "Drug Review Analysis",
+      "problem": "Understanding drug effectiveness from unstructured patient reviews",
+      "solution": "Used NLP and transformer models to analyze sentiment and predict ratings",
+      "tech": ["HuggingFace", "NLP", "Transformers"],
+      "impact": "Extracted insights on drug performance and patient satisfaction",
+      "details": "Built classification and regression models on large-scale text data"
+    },
+    {
+      "name": "Driver Drowsiness Detection",
+      "problem": "Driver fatigue leads to accidents",
+      "solution": "Developed a real-time computer vision system to detect drowsiness",
+      "tech": ["Python", "OpenCV", "Dlib", "Keras"],
+      "impact": "Improved safety through real-time alerts",
+      "details": "Used eye aspect ratio and facial cues for fatigue detection"
+    },
+    {
+      "name": "Traffic Sign Prediction",
+      "problem": "Autonomous systems require accurate traffic sign recognition",
+      "solution": "Built a deep learning model for multi-class classification",
+      "tech": ["TensorFlow", "Keras", "Deep Learning"],
+      "impact": "Improved classification accuracy for real-world datasets",
+      "details": "Trained on image datasets with preprocessing and augmentation"
+    },
+    {
+      "name": "Console Cafe",
+      "problem": "Need for collaborative software development experience",
+      "solution": "Developed a web application using agile methodology",
+      "tech": ["Web Development", "Agile", "Testing"],
+      "impact": "Achieved 100 percent test coverage with strong team collaboration",
+      "details": "Focused on sprint planning, peer reviews, and CI practices"
+    }
+  ]
+}
